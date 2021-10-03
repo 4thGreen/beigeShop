@@ -17,13 +17,19 @@
 
     <style>
         body {padding-top: 60px;}
+        /*#left{*/
+        /*    float: left;*/
+        /*}*/
+        /*#right{*/
+        /*    float: right;*/
+        /*}*/
     </style>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <!-- 상단메뉴의 이름 -->
-        <a class="navbar-brand" href="#"> Bootstrap</a>
+        <a class="navbar-brand" href="#"> 4th Shop</a>
         <!-- 상단 메뉴가 좁아지면서 햄버거 버튼됨 -->
         <div class="navbar-header">
             <button class="navbar-toggle collapsed"
@@ -56,7 +62,7 @@
                 <li><a href="#">Node</a></li>
                 <li><a href="#">API</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" id="right">
                 <li><a href="#">Node</a></li>
                 <li><a href="#">API</a></li>
             </ul>

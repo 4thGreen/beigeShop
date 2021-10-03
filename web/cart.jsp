@@ -17,6 +17,12 @@
 
     <style>
         body {padding-top: 60px;}
+        /*#left{*/
+        /*    float: left;*/
+        /*}*/
+        /*#right{*/
+        /*    float: right;*/
+        /*}*/
     </style>
 </head>
 <body>
@@ -56,7 +62,7 @@
                 <li><a href="#">Node</a></li>
                 <li><a href="#">API</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" id="right">
                 <li><a href="#">Node</a></li>
                 <li><a href="#">API</a></li>
             </ul>

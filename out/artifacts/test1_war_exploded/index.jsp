@@ -12,7 +12,7 @@
 </head>
 <body>
   <script>
-    location.href = 'cart.jsp';
+    location.href = 'order.jsp';
   </script>
 </body>
 </html>
