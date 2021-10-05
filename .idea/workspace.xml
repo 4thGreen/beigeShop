@@ -9,10 +9,129 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9c81c19-8b7d-42a1-8985-a00e7dad7379" name="Changes" comment="design(shop): css, html, bootstrap 이용하여 order.jsp 디자인">
-      <change afterPath="$PROJECT_DIR$/src/main/java/order/OrderDAO.java" afterDir="false" />
+    <list default="true" id="d9c81c19-8b7d-42a1-8985-a00e7dad7379" name="Changes" comment="feat(shop): DAO  initial create">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/cart/CartDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/cart/CartDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/modifyprofile/ModifyProfileDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/modifyprofile/ModifyProfileDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/order/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/order/OrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/order/OrderDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/tset/test1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker.standalone.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker.standalone.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker.standalone.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker3.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker3.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker3.standalone.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker3.standalone.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/css/bootstrap-datepicker3.standalone.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/js/bootstrap-datepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/js/bootstrap-datepicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker-en-CA.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.ar-tn.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.ar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.az.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.bg.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.bm.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.bn.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.br.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.bs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.ca.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.cs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.cy.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.da.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.de.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.el.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.en-AU.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.en-CA.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.en-GB.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.en-IE.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.en-NZ.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.en-ZA.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.eo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.es.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.et.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.eu.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.fa.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.fi.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.fo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.fr-CH.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.fr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.gl.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.he.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.hi.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.hr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.hu.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.hy.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.id.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.is.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.it-CH.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.it.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.ja.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.ka.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.kh.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.kk.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.km.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.ko.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.kr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.lt.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.lv.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.me.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.mk.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.mn.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.ms.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.nl-BE.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.nl.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.no.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.oc.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.pl.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.pt-BR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.pt.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.ro.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.rs-latin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.rs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.ru.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.si.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.sk.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.sl.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.sq.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.sr-latin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.sr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.sv.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.sw.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.ta.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.tg.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.th.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.tk.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.tr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.uk.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.uz-cyrl.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.uz-latn.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.vi.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.zh-CN.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/locales/bootstrap-datepicker.zh-TW.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cart/CartDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cart/CartDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cart/CartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cart/CartDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modifyprofile/ModifyProfileDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modifyprofile/ModifyProfileDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modifyprofile/ModifyProfileDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modifyprofile/ModifyProfileDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/order/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/order/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/order/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/order/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/order/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cart/CartDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cart/CartDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modifyprofile/ModifyProfileDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modifyprofile/ModifyProfileDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/order/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/order/OrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/order/OrderDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tset/test1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modifyProfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/modifyProfile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,13 +141,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1yydDP08yYnDtSCs9mXMnFOwTV9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -42,7 +169,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -204,7 +331,9 @@
       <option name="presentableId" value="Default" />
       <updated>1633227642585</updated>
       <workItem from="1633227643867" duration="664000" />
-      <workItem from="1633253698479" duration="30808000" />
+      <workItem from="1633253698479" duration="49598000" />
+      <workItem from="1633421968363" duration="2116000" />
+      <workItem from="1633467513710" duration="5361000" />
     </task>
     <task id="LOCAL-00001" summary="design(shop): css, html, bootstrap 이용하여 order.jsp 디자인">
       <created>1633286768424</created>
@@ -213,7 +342,21 @@
       <option name="project" value="LOCAL" />
       <updated>1633286768424</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="remove(shop): test.java delete">
+      <created>1633287317107</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1633287317107</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat(shop): DAO  initial create">
+      <created>1633287403228</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1633287403228</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,9 +372,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="design(shop): css, html, bootstrap 이용하여 order.jsp 디자인" />
-    <option name="LAST_COMMIT_MESSAGE" value="design(shop): css, html, bootstrap 이용하여 order.jsp 디자인" />
+    <MESSAGE value="remove(shop): test.java delete" />
+    <MESSAGE value="feat(shop): DAO  initial create" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(shop): DAO  initial create" />
   </component>
 </project>
