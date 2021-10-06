@@ -55,9 +55,28 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        .flex-shrink-0 .p-3{
+
+        #color ,#color1 ,#color2 ,#color3{
+            background-color: transparent;
+        }
+        .list-unstyled .collapse .btn-toggle-nav .link-dark{
+            background-color: transparent;
+            border-color: gray;
+        }
+        .collapse .navbar-nav .nav-item .nav-link{
+
+            -moz-transition: background, 0.5s;
+            -o-transition: background, 0.5s;
+            -webkit-transition: background, 0.5s;
+            transition: background, 0.5s;
 
         }
+        .collapse .navbar-nav .nav-item .nav-link:hover{
+            color: rgba(150, 6, 6, 0.85);
+        }
+
+
+
 
     </style>
 
@@ -69,27 +88,37 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Tenth navbar example">
     <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<%--        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">--%>
+<%--            <span class="navbar-toggler-icon"></span>--%>
+<%--        </button>--%>
 
-        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-            <ul class="navbar-nav" id="center">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" ><h2>4th SHOP</h2></a>
-                </li>
-            </ul>
-        </div>
+
+
+<%--        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">--%>
+<%--            <ul class="navbar-nav" id="center">--%>
+<%--                <li class="nav-item">--%>
+<%--                    <a class="nav-link active" aria-current="page" href="#" ><h2>4th SHOP</h2></a>--%>
+<%--                </li>--%>
+<%--            </ul>--%>
+
+
+            <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08" ><h2>BASIC</h2></a>
+
+
+<%--        </div>--%>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation" >
+                <span class="navbar-toggler-icon "></span>
+            </button>
         <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample09">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">LOGOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">ORDER</a>
+                    <a class="nav-link active" aria-current="page" href="order.jsp">ORDER</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">MY ACCOUNT</a>
+                    <a class="nav-link active" aria-current="page" href="account.jsp">MY ACCOUNT</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>
@@ -110,17 +139,17 @@
     <div class="row">
         <div class="col-md-2">
             <!-- 사이드 바 메뉴-->
-            <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+            <div class="flex-shrink-0 p-3 bg-white" style="width: auto;">
                 <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none">
                     <svg class="bi me-2" width="30" height="70"><use xlink:href="#bootstrap"></use></svg>
 <%--                    <span class="fs-5 fw-semibold">Collapsible</span>--%>
                 </a>
-                <ul class="list-unstyled ps-0">
+                <ul class="list-unstyled ps-0" >
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                        <button class="btn btn-light btn-toggle align-items-center rounded collapsed " data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false" id="color">
                             OUTER
                         </button>
-                        <div class="collapse " id="home-collapse">
+                        <div class="collapse" id="home-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 <li><a href="#" class="link-dark rounded">ZIP UP HOODIE</a></li>
                                 <li><a href="#" class="link-dark rounded">COAT</a></li>
@@ -129,7 +158,7 @@
                         </div>
                     </li>
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false" id="color1">
                             PANTS
                         </button>
                         <div class="collapse" id="dashboard-collapse">
@@ -142,7 +171,7 @@
                         </div>
                     </li>
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false" id="color2">
                             SHOES
                         </button>
                         <div class="collapse" id="orders-collapse">
@@ -156,7 +185,7 @@
                     </li>
 <%--                    <li class="border-top my-3"></li>--%>
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false" id="color3">
                             Account
                         </button>
                         <div class="collapse" id="account-collapse">

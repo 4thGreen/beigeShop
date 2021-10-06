@@ -2,13 +2,13 @@ package cart;
 
 public class CartDTO {
     private String productImage; //상품이미지
-    private String productInfo;  //상품정보
+    private int productInfo;  //상품정보
     private int price;           //가격
     private String delivery;     //배송종류
     private String deliveryPrice;//배송비용
 
 
-    public CartDTO(String productImage, String productInfo, int price, String delivery, String deliveryPrice) {
+    public CartDTO(String productImage, int productInfo, int price, String delivery, String deliveryPrice) {
         this.productImage = productImage;
         this.productInfo = productInfo;
         this.price = price;
@@ -25,11 +25,11 @@ public class CartDTO {
         this.productImage = productImage;
     }
 
-    public String getProductInfo() {
+    public int getProductInfo() {
         return productInfo;
     }
 
-    public void setProductInfo(String productInfo) {
+    public void setProductInfo(int productInfo) {
         this.productInfo = productInfo;
     }
 

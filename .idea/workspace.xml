@@ -9,28 +9,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9c81c19-8b7d-42a1-8985-a00e7dad7379" name="Changes" comment="feat(shop): 사용자정보수정 form 구현">
+    <list default="true" id="d9c81c19-8b7d-42a1-8985-a00e7dad7379" name="Changes" comment="rename(shop): modifyProfile.java -&gt; User.java">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpclient-4.5.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpclient-cache-4.5.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpclient-osgi-4.5.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpclient-win-4.5.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpcore-4.4.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpmime-4.5.13.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/cart/CartDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/cart/CartDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/modifyprofile/ModifyProfileDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/modifyprofile/ModifyProfileDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/modifyprofile/ModifyProfileDTO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/order/Order.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/order/OrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/order/OrderDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/modifyProfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/modifyProfile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/sidebar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cart/CartDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cart/CartDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cart/CartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cart/CartDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modifyprofile/ModifyProfileDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modifyprofile/ModifyProfileDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modifyprofile/ModifyProfileDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modifyprofile/ModifyProfileDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modifyprofile/ModifyProfileDAO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/order/Order.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/order/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/order/OrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/order/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/order/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/user/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/user/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user/UserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cart/CartDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cart/CartDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/modifyprofile/ModifyProfileDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modifyprofile/ModifyProfileDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modifyprofile/ModifyProfileDTO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/order/Order.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/order/OrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/order/OrderDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/test1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/modifyProfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/modifyProfile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/order.jsp" afterDir="false" />
@@ -71,17 +83,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Program Files/Java/jdk1.8.0_301/lib/ojdbc6.jar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admins\test1\web\WEB-INF\lib" />
       <recent name="C:\Users\admins\test1\web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -235,7 +248,9 @@
       <workItem from="1633227643867" duration="664000" />
       <workItem from="1633253698479" duration="49598000" />
       <workItem from="1633421968363" duration="2116000" />
-      <workItem from="1633467513710" duration="7487000" />
+      <workItem from="1633467513710" duration="15241000" />
+      <workItem from="1633509410962" duration="668000" />
+      <workItem from="1633510110193" duration="6465000" />
     </task>
     <task id="LOCAL-00001" summary="design(shop): css, html, bootstrap 이용하여 order.jsp 디자인">
       <created>1633286768424</created>
@@ -265,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633473688473</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="rename(shop): modifyProfile.java -&gt; User.java">
+      <created>1633475699700</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1633475699700</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +310,7 @@
     <MESSAGE value="remove(shop): test.java delete" />
     <MESSAGE value="feat(shop): DAO  initial create" />
     <MESSAGE value="feat(shop): 사용자정보수정 form 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(shop): 사용자정보수정 form 구현" />
+    <MESSAGE value="rename(shop): modifyProfile.java -&gt; User.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename(shop): modifyProfile.java -&gt; User.java" />
   </component>
 </project>

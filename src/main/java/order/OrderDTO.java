@@ -3,14 +3,14 @@ package order;
 public class OrderDTO {
     private Long orderNumber;   // 주문번호
     private String productImage;// 상품이미지
-    private String productInfo; // 상품정보
+    private int productInfo; // 상품정보
     private int amount;         // 수량
     private int price;          // 가격
     private String orderStatus; // 주문처리상태
     private String orderCancel; // 취소/교환/환불 상태
 
 
-    public OrderDTO(Long orderNumber, String orderStatus, String orderCancel, int amount, int price, String productInfo, String productImage) {
+    public OrderDTO(Long orderNumber, String orderStatus, String orderCancel, int amount, int price, int productInfo, String productImage) {
         this.orderNumber = orderNumber;
         this.orderStatus = orderStatus;
         this.orderCancel = orderCancel;
@@ -68,11 +68,11 @@ public class OrderDTO {
         this.price = price;
     }
 
-    public String getProductInfo() {
+    public int getProductInfo() {
         return productInfo;
     }
 
-    public void setProductInfo(String productInfo) {
+    public void setProductInfo(int productInfo) {
         this.productInfo = productInfo;
     }
 }

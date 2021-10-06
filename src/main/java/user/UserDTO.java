@@ -11,25 +11,17 @@ public class UserDTO {
     private String userEmail;
 
 
-    public UserDTO(String userId, String userPassword, String checkPassword, String userName, String userAddress, long phoneNumber, long landlineNumber, String userEmail) {
-        this.userId = userId;
-        this.userPassword = userPassword;
-        this.userPasswordCheck = checkPassword;
-        this.userName = userName;
-        this.userAddress = userAddress;
-        this.mobileNumber = phoneNumber;
-        this.phoneNumber = landlineNumber;
-        this.userEmail = userEmail;
-    }
+//    public UserDTO(String userId, String userPassword, String checkPassword, String userName, String userAddress, long phoneNumber, long landlineNumber, String userEmail) {
+//        this.userId = userId;
+//        this.userPassword = userPassword;
+//        this.userPasswordCheck = checkPassword;
+//        this.userName = userName;
+//        this.userAddress = userAddress;
+//        this.mobileNumber = phoneNumber;
+//        this.phoneNumber = landlineNumber;
+//        this.userEmail = userEmail;
+//    }
 
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
 
     public String getUserId() {
         return userId;
@@ -85,5 +77,13 @@ public class UserDTO {
 
     public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 }

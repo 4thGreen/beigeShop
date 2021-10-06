@@ -105,7 +105,7 @@
         <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
             <ul class="navbar-nav" id="center">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" ><h2>BASIC</h2></a>
+                    <a class="nav-link active" aria-current="page" href="main.jsp" ><h2>BASIC</h2></a>
                 </li>
             </ul>
         </div>
@@ -222,7 +222,7 @@
                     <div class="input-form-backgroud row">
                         <div class="input-form col-md-12 mx-auto">
                             <h4 class="mb-3"></h4>
-                            <form class="validation-form" novalidate action="">
+                            <form class="validation-form" novalidate action="modifyProfileAction.jsp">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="userId">아이디</label>
@@ -329,12 +329,8 @@
 
 
                                 <hr class="mb-4">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="aggrement" required>
-                                    <label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
-                                </div>
                                 <div class="mb-4"></div>
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">가입 완료</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit" formaction="modifyProfileAction.jsp">수정 완료</button>
                             </form>
                         </div>
                     </div>
