@@ -97,24 +97,29 @@
 
 </head>
 <body>
-
+<%
+    String userID = null;
+    if (session.getAttribute("userID") != null) {
+        userID = (String) session.getAttribute("userID");
+    }
+%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Tenth navbar example">
     <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-            <ul class="navbar-nav" id="center">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="main.jsp" ><h2>BASIC</h2></a>
-                </li>
-            </ul>
-        </div>
+
+        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08" ><h2>BASIC</h2></a>
+
+
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon "></span>
+        </button>
         <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample09">
+            <%
+                if (userID == null) {
+            %>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">LOGIN</a>
+                    <a class="nav-link active" aria-current="page" href="login.jsp">LOGIN</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="order.jsp">ORDER</a>
@@ -126,6 +131,27 @@
                     <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>
                 </li>
             </ul>
+            <%
+            } else {
+            %>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="logoutAction.jsp">LOGOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="order.jsp">ORDER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="account.jsp">MY ACCOUNT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>
+                </li>
+            </ul>
+            <%
+                }
+            %>
         </div>
     </div>
 </nav>
