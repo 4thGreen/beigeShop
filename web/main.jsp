@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<%@ page import="user.UserDAO" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -271,6 +272,14 @@
         <%--        </div>--%>
         <div class="col-md-5" id="title">
             <h4>MAIN</h4>
+            <%
+                String id = (String) session.getAttribute("userID");
+
+//                UserDAO userDAO = new UserDAO();
+//                userDAO.view(id);
+            %>
+            <%=id%>님 환영합니다.
+
         </div>
     </div>
 </div>

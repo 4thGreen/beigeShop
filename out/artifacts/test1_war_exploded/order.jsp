@@ -106,10 +106,10 @@
                     <a class="nav-link active" aria-current="page" href="login.jsp">LOGIN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="order.jsp">ORDER</a>
+                    <a class="nav-link active" aria-current="page" href="login.jsp">ORDER</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="account.jsp">MY ACCOUNT</a>
+                    <a class="nav-link active" aria-current="page" href="login.jsp">MY ACCOUNT</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>

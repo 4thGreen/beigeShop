@@ -1,8 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<%@ page import="user.UserDAO" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
@@ -95,24 +98,48 @@
 
 </head>
 <body>
-
+<%
+    request.setCharacterEncoding("UTF-8");
+    String userID = null;
+    if (session.getAttribute("userID") != null) {
+        userID = (String) session.getAttribute("userID");
+    }
+%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Tenth navbar example">
     <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-            <ul class="navbar-nav" id="center">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="main.jsp" ><h2>BASIC</h2></a>
-                </li>
-            </ul>
-        </div>
+
+        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08" ><h2>BASIC</h2></a>
+
+
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon "></span>
+        </button>
         <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample09">
+            <%
+                if (userID == null) {
+            %>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">LOGOUT</a>
+                    <a class="nav-link active" aria-current="page" href="login.jsp">LOGIN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="login.jsp">ORDER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="login.jsp">MY ACCOUNT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>
+                </li>
+            </ul>
+            <%
+            } else {
+            %>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="logoutAction.jsp">LOGOUT</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="order.jsp">ORDER</a>
@@ -124,6 +151,9 @@
                     <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>
                 </li>
             </ul>
+            <%
+                }
+            %>
         </div>
     </div>
 </nav>
@@ -214,6 +244,13 @@
         <%--            </div>--%>
         <%--        </div>--%>
 
+        <%
+            String id = (String) session.getAttribute("userID");
+            List<String> userInfoList;
+            UserDAO userDAO = new UserDAO();
+            userInfoList = userDAO.view(id);
+        %>
+
 
         <div class="col-md-7" id="title">
             <h4>Modify Profile</h4>
@@ -222,26 +259,26 @@
                     <div class="input-form-backgroud row">
                         <div class="input-form col-md-12 mx-auto">
                             <h4 class="mb-3"></h4>
-                            <form class="validation-form" novalidate action="modifyProfileAction.jsp">
+                            <form class="validation-form" name="frm" id="frm" novalidate action="modifyProfileAction.jsp" method="post" accept-charset="utf-8">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="userId">아이디</label>
-                                        <input type="text" class="form-control" id="userId" placeholder="" value="" required>
+                                        <input type="text" class="form-control" id="userId" name="userId" placeholder="" value="<%=userInfoList.get(0)%>" required>
 
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="userPassword">비밀번호</label>
-                                        <input type="password" class="form-control" id="userPassword" placeholder="" value="" required>
+                                        <input type="password" class="form-control" id="userPassword" name="userPassword" placeholder="" value="<%=userInfoList.get(1)%>" required>
 
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="userPasswordCheck">비밀번호확인</label>
-                                        <input type="password" class="form-control" id="userPasswordCheck" placeholder="" value="" required>
+                                        <input type="password" class="form-control" id="userPasswordCheck" name="userPasswordCheck" placeholder="" value="" required>
 
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="userName">이름</label>
-                                        <input type="text" class="form-control" id="userName" placeholder="" value="" required>
+                                        <input type="text" class="form-control" id="userName" name="userName" placeholder="" value="<%=userInfoList.get(2)%>" required>
 
                                     </div>
                                 </div>
@@ -254,11 +291,13 @@
 <%--                                    </div>--%>
 <%--                                </div>--%>
                                 <div>
-                                    <input type="text" id="postcode" placeholder="우편번호">
+                                    <input type="text" id="postcode" name="postcode" placeholder="우편번호">
                                     <input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br>
-                                    <input type="text" id="address" placeholder="주소"><br>
-                                    <input type="text" id="detailAddress" placeholder="상세주소">
-                                    <input type="text" id="extraAddress" placeholder="참고항목">
+                                    <input type="text" id="address" name="address" placeholder="주소"><br>
+                                    <input type="text" id="detailAddress" name="detailAddress" placeholder="상세주소">
+                                    <input type="text" id="extraAddress" name="extraAddress" placeholder="참고항목">
+                                    <input type="hidden" name="userAddress">
+
 
                                     <div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
                                         <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
@@ -270,7 +309,7 @@
 
 
                                 <div class="mun-title">일반전화</div>
-                                <div class="mun-desc"><span class="mun-formSP"><select id="phone1" name="phone[]" fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg="" >
+                                <div class="mun-desc"><span class="mun-formSP"><select id="phone1" name="phoneNumber1" fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg="" >
                                         <option value="02">02</option>
                                         <option value="031">031</option>
                                         <option value="032">032</option>
@@ -297,15 +336,16 @@
                                         <option value="019">019</option>
 
                                     </select>-
-                                        <input id="phone2" name="phone[]" maxlength="4" fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg="" value="" type="text"  />-
-                                        <input id="phone3" name="phone[]" maxlength="4" fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg="" value="" type="text"  />
+                                        <input id="phone2" name="phoneNumber2" maxlength="4" fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg="" value="" type="text"  />-
+                                        <input id="phone3" name="phoneNumber3" maxlength="4" fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg="" value="" type="text"  />
+                                        <input type="hidden" name="phoneNumber">
                                     </span>
                                     </div>
 
 
                                     <div class="mun-title">휴대전화</div>
                                     <div class="mun-desc">
-                                <span class="mun-formSP"><select id="mobile1" name="mobile[]" fw-filter="isNumber&isFill" fw-label="휴대전화" fw-alone="N" fw-msg="" >
+                                <span class="mun-formSP"><select id="mobile1" name="mobileNumber1" fw-filter="isNumber&isFill" fw-label="휴대전화" fw-alone="N" fw-msg="" >
                                         <option value="010">010</option>
                                         <option value="011">011</option>
                                         <option value="016">016</option>
@@ -313,15 +353,16 @@
                                         <option value="018">018</option>
                                         <option value="019">019</option>
                                 </select>-
-                                        <input id="mobile2" name="phone[]" maxlength="4" fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg="" value="" type="text"  />-
-                                        <input id="mobile3" name="phone[]" maxlength="4" fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg="" value="" type="text"  />
+                                        <input id="mobile2" name="mobileNumber2" maxlength="4" fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg="" value="" type="text"  />-
+                                        <input id="mobile3" name="mobileNumber3" maxlength="4" fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg="" value="" type="text"  />
+                                        <input type="hidden" name="mobileNumber">
                                     </span>
                                     </div>
 
 
                                 <div class="mb-3">
                                     <label for="userEmail">이메일</label>
-                                    <input type="email" class="form-control" id="userEmail" placeholder="you@example.com" required>
+                                    <input type="email" class="form-control" id="userEmail" name="userEmail" placeholder="you@example.com" value="<%=userInfoList.get(6)%>" required>
                                     <div class="invalid-feedback">
                                         이메일을 입력해주세요.
                                     </div>
@@ -330,7 +371,7 @@
 
                                 <hr class="mb-4">
                                 <div class="mb-4"></div>
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">수정 완료</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit" id="editSubmit" formaction="modifyProfileAction.jsp">수정 완료</button>
                             </form>
                         </div>
                     </div>
@@ -395,17 +436,17 @@
                         extraAddr = ' (' + extraAddr + ')';
                     }
                     // 조합된 참고항목을 해당 필드에 넣는다.
-                    document.getElementById("sample3_extraAddress").value = extraAddr;
+                    document.getElementById("extraAddress").value = extraAddr;
 
                 } else {
-                    document.getElementById("sample3_extraAddress").value = '';
+                    document.getElementById("extraAddress").value = '';
                 }
 
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample3_postcode').value = data.zonecode;
-                document.getElementById("sample3_address").value = addr;
+                document.getElementById('postcode').value = data.zonecode;
+                document.getElementById("address").value = addr;
                 // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample3_detailAddress").focus();
+                document.getElementById("detailAddress").focus();
 
                 // iframe을 넣은 element를 안보이게 한다.
                 // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
@@ -425,6 +466,16 @@
         // iframe을 넣은 element를 보이게 한다.
         element_wrap.style.display = 'block';
     }
+
+    $('#editSubmit').click(function ()
+        {
+            var f = document.frm;
+            f.phoneNumber.value = f.phoneNumber1.value + f.phoneNumber2.value + f.phoneNumber3.value;
+            f.mobileNumber.value = f.mobileNumber1.value + f.mobileNumber2.value + f.mobileNumber3.value;
+            f.userAddress.value = f.postcode.value + f.address.value + f.detailAddress.value + f.extraAddress.value;
+            f.submit();
+        });
+
 </script>
 </body>
 </html>
