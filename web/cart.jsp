@@ -212,7 +212,11 @@
         <%--        </div>--%>
         <div class="col-md-5" id="title">
             <h4>Shopping Cart</h4>
+
+                <%=request.getParameter("date")%>
+
         </div>
+
     </div>
 </div>
 <script type="text/javascript">

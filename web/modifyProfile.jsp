@@ -263,7 +263,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="userId">아이디</label>
-                                        <input type="text" class="form-control" id="userId" name="userId" placeholder="" value="<%=userInfoList.get(0)%>" required>
+                                        <input type="text" class="form-control" id="userId" name="userId" placeholder="" value="<%=userInfoList.get(0)%>" required readonly>
 
                                     </div>
                                     <div class="col-md-6 mb-3">

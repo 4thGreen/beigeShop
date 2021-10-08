@@ -9,40 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9c81c19-8b7d-42a1-8985-a00e7dad7379" name="Changes" comment="rename(shop): modifyProfile.java -&gt; User.java">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpclient-4.5.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpclient-cache-4.5.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpclient-osgi-4.5.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpclient-win-4.5.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpcore-4.4.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpmime-4.5.13.jar" afterDir="false" />
+    <list default="true" id="d9c81c19-8b7d-42a1-8985-a00e7dad7379" name="Changes" comment="feat(shop): 회원정보 update 구현">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/cart/CartDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/cart/CartDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/modifyprofile/ModifyProfileDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/order/Order.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/order/OrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/WEB-INF/classes/order/OrderDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/modifyProfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/modifyProfile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/test1_war_exploded/sidebar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cart/CartDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cart/CartDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cart/CartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cart/CartDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modifyprofile/ModifyProfileDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/order/Order.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/order/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/order/OrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/order/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/order/OrderDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/user/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/user/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cart/CartDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cart/CartDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/modifyprofile/ModifyProfileDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/order/Order.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/order/OrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/order/OrderDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/test1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/modifyProfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/modifyProfile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/order.jsp" afterDir="false" />
@@ -55,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -83,7 +61,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Program Files/Java/jdk1.8.0_301/lib/ojdbc6.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project1" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -91,6 +69,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -98,9 +77,11 @@
       <recent name="C:\Users\admins\test1\web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\admins\test1\web" />
-      <recent name="C:\Users\admins\test1\web\js" />
-      <recent name="C:\Users\admins\test1\web\css" />
+      <recent name="C:\Users\admins\test1\web\WEB-INF\lib" />
+      <recent name="C:\Users\admins\test1\src\main\java\filters" />
+      <recent name="C:\Users\admins\test1\web\WEB-INF\filters" />
+      <recent name="C:\Users\admins\test1\web\WEB-INF" />
+      <recent name="C:\Users\admins\test1\web\WEB-INF\classes\filters" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.108">
@@ -110,7 +91,7 @@
       <deployment>
         <artifact name="test1:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/" />
+            <option name="CONTEXT_PATH" value="/test1_war_exploded" />
           </settings>
         </artifact>
       </deployment>
@@ -209,6 +190,54 @@
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="6096" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -231,6 +260,10 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat 7.0.108" />
+      <item itemvalue="Tomcat Server.cart.jsp" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Tomcat Server.cart.jsp" />
@@ -250,7 +283,9 @@
       <workItem from="1633421968363" duration="2116000" />
       <workItem from="1633467513710" duration="15241000" />
       <workItem from="1633509410962" duration="668000" />
-      <workItem from="1633510110193" duration="6465000" />
+      <workItem from="1633510110193" duration="42483000" />
+      <workItem from="1633652804862" duration="4015000" />
+      <workItem from="1633670523321" duration="11056000" />
     </task>
     <task id="LOCAL-00001" summary="design(shop): css, html, bootstrap 이용하여 order.jsp 디자인">
       <created>1633286768424</created>
@@ -287,7 +322,35 @@
       <option name="project" value="LOCAL" />
       <updated>1633475699700</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat(shop): 로그인구현, oracle db 연동">
+      <created>1633557903903</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1633557903903</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix(shop): 로그인 오류 수정">
+      <created>1633559720639</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1633559720639</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat(shop): 로그아웃 구현, session 값에 따라 logout, login">
+      <created>1633561723999</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1633561723999</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat(shop): 회원정보 update 구현">
+      <created>1633595059178</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1633595059178</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,6 +374,10 @@
     <MESSAGE value="feat(shop): DAO  initial create" />
     <MESSAGE value="feat(shop): 사용자정보수정 form 구현" />
     <MESSAGE value="rename(shop): modifyProfile.java -&gt; User.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename(shop): modifyProfile.java -&gt; User.java" />
+    <MESSAGE value="feat(shop): 로그인구현, oracle db 연동" />
+    <MESSAGE value="fix(shop): 로그인 오류 수정" />
+    <MESSAGE value="feat(shop): 로그아웃 구현, session 값에 따라 logout, login" />
+    <MESSAGE value="feat(shop): 회원정보 update 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(shop): 회원정보 update 구현" />
   </component>
 </project>

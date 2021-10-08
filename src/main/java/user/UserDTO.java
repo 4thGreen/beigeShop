@@ -6,8 +6,8 @@ public class UserDTO {
     private String userPasswordCheck; //비밀번호확인
     private String userName;      //사용자 이름
     private String userAddress;   //사용자 주소
-    private long mobileNumber;     //휴대전화
-    private long phoneNumber;  //일반전화
+    private String mobileNumber;     //휴대전화
+    private String phoneNumber;  //일반전화
     private String userEmail;
 
 
@@ -63,19 +63,19 @@ public class UserDTO {
         this.userAddress = userAddress;
     }
 
-    public long getMobileNumber() {
+    public String getMobileNumber() {
         return mobileNumber;
     }
 
-    public void setMobileNumber(long mobileNumber) {
+    public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
-    public long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
