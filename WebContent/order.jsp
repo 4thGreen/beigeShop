@@ -294,13 +294,14 @@
                     OrderDAO orderDAO = new OrderDAO();
 
                     if (requestStartDate != null) {
-                        orderDTOList = orderDAO.view(String.valueOf(session.getAttribute("userID")), requestStartDate);
+
+                        orderDTOList = orderDAO.viewOrderTwoDate(String.valueOf(session.getAttribute("userID")), requestStartDate, requestEndDate);
 
                 %>
             </div>
             <div class="container-fluid">
                 <div class="mt-3">
-                    <table  id="orderLists">
+                    <table id="orderLists">
                         <thead>
                         <tr>
                             <td>주문번호</td>
@@ -314,9 +315,11 @@
                         <tbody>
                         <%
                             for (int i = 0; i < orderDTOList.size(); i++) {
+
                         %>
                         <tr>
-                            <td><%=orderDTOList.get(i).getOrderNumber()%>
+                            <td>
+                                <a href="orderDetail.jsp?orderNumber=<%=orderDTOList.get(i).getOrderNumber()%>"><%=orderDTOList.get(i).getOrderNumber()%>
                             </td>
                             <td><%=orderDTOList.get(i).getOrderDate()%>
                             </td>

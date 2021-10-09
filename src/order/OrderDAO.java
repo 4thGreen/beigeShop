@@ -26,7 +26,7 @@ public class OrderDAO {
         }
     }
 
-    public List<OrderDTO> view(String userID, String inputOrderDate) {
+    public List<OrderDTO> viewOrderOneDate(String userID, String inputOrderDate) {
 //        List<OrderDTO> orderDTOList = null;
         String SQL = "SELECT * FROM ORDERLIST WHERE ID = ? AND ORDERDATE = ?";
         try {
@@ -58,6 +58,77 @@ public class OrderDAO {
         }
         return null;
     }
+
+
+    public List<OrderDTO> viewOrderTwoDate(String userID, String OrderStartDate, String OrderEndDate) {
+//        List<OrderDTO> orderDTOList = null;
+        String SQL = "SELECT * FROM ORDERLIST WHERE ID = ? AND ORDERDATE BETWEEN ? AND ?";
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, userID);
+            pstmt.setString(2, OrderStartDate);
+            pstmt.setString(3, OrderEndDate);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+
+                String id = rs.getString("ID");
+                Long orderNo = rs.getLong("ORDERNO");
+                Long productNo = rs.getLong("PRODUCTNO");
+                int quantity = rs.getInt("QUANTITY");
+                int price = rs.getInt("PRICE");
+                String orderDate = rs.getString("ORDERDATE");
+                String status = rs.getString("STATUS");
+                String request = rs.getString("REQUEST");
+                Long tracking = rs.getLong("TRACKING");
+                OrderDTO orderDTO = new OrderDTO(orderNo, productNo, quantity, price, orderDate, status, request, tracking);
+                orderDTOList.add(orderDTO);
+                System.out.println("orderDTOList.size = " + orderDTOList.size());
+            }
+            return orderDTOList;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            dbClose();
+        }
+        return null;
+    }
+
+
+
+    public OrderDTO orderDetailView(long orderNumber) {
+//        List<OrderDTO> orderDTOList = null;
+        String SQL = "SELECT * FROM ORDERLIST WHERE ORDERNO = ?";
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setLong(1, orderNumber);
+
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+
+                String id = rs.getString("ID");
+                Long orderNo = rs.getLong("ORDERNO");
+                Long productNo = rs.getLong("PRODUCTNO");
+                int quantity = rs.getInt("QUANTITY");
+                int price = rs.getInt("PRICE");
+                String orderDate = rs.getString("ORDERDATE");
+                String status = rs.getString("STATUS");
+                String request = rs.getString("REQUEST");
+                Long tracking = rs.getLong("TRACKING");
+                OrderDTO orderDTO = new OrderDTO(orderNo, productNo, quantity, price, orderDate, status, request, tracking);
+//                orderDTOList.add(orderDTO);
+//                System.out.println("orderDTOList.size = " + orderDTOList.size());
+                return orderDTO;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            dbClose();
+        }
+        return null;
+    }
+
 
 
     public void dbClose() {
