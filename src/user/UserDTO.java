@@ -13,6 +13,7 @@ public class UserDTO {
     private String address;
     private String detailAddress;
     private String extraAddress;
+<<<<<<< HEAD
 
 
     private String phoneNumber1;
@@ -97,6 +98,94 @@ public class UserDTO {
     public String getExtraAddress() {
         return extraAddress;
     }
+=======
+
+
+    private String phoneNumber1;
+    private String phoneNumber2;
+    private String phoneNumber3;
+    private String mobileNumber1;
+    private String mobileNumber2;
+    private String mobileNumber3;
+
+
+    public UserDTO(String phoneNumber1, String phoneNumber2, String phoneNumber3, String mobileNumber1, String mobileNumber2, String mobileNumber3) {
+        this.phoneNumber1 = phoneNumber1;
+        this.phoneNumber2 = phoneNumber2;
+        this.phoneNumber3 = phoneNumber3;
+        this.mobileNumber1 = mobileNumber1;
+        this.mobileNumber2 = mobileNumber2;
+        this.mobileNumber3 = mobileNumber3;
+    }
+
+
+    public UserDTO(String postCode, String address, String detailAddress, String extraAddress) {
+        this.postcode = postCode;
+        this.address = address;
+        this.detailAddress = detailAddress;
+        this.extraAddress = extraAddress;
+    }
+
+
+    public UserDTO() {
+
+    }
+
+
+    public UserDTO(String userId, String userPassword, String userName, String userAddress, String mobileNumber, String phoneNumber, String userEmail) {
+        this.userId = userId;
+        this.userPassword = userPassword;
+        this.userName = userName;
+        this.userAddress = userAddress;
+        this.mobileNumber = mobileNumber;
+        this.phoneNumber = phoneNumber;
+        this.userEmail = userEmail;
+    }
+
+
+    public String getPhoneNumber1() {
+        return phoneNumber1;
+    }
+
+    public String getPhoneNumber2() {
+        return phoneNumber2;
+    }
+
+    public String getPhoneNumber3() {
+        return phoneNumber3;
+    }
+
+    public String getMobileNumber1() {
+        return mobileNumber1;
+    }
+
+    public String getMobileNumber2() {
+        return mobileNumber2;
+    }
+
+    public String getMobileNumber3() {
+        return mobileNumber3;
+    }
+
+
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getDetailAddress() {
+        return detailAddress;
+    }
+
+    public String getExtraAddress() {
+        return extraAddress;
+    }
+
+>>>>>>> 29da850dee530697d34243d63d4b283fe6add4fd
 
 
     public String getUserId() {

@@ -260,7 +260,7 @@
 
 
         <div class="col-md-7" id="title">
-            <h4>Modify Profile</h4>
+            <h4>Register</h4>
 
             <div class="container" id="modify">
                 <div class="input-form-backgroud row">
@@ -299,7 +299,6 @@
 
                                 </div>
                             </div>
-
 
 
                             <div>
@@ -363,7 +362,7 @@
                                         <input id="phone3" name="phoneNumber3" maxlength="4"
                                                fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg=""
                                                value="" type="number"/>
-                                        <input type="hidden" name="phoneNumber">
+
                                     </span>
                             </div>
 
@@ -390,6 +389,21 @@
                                                fw-filter="isNumber&isNumber" fw-label="휴대전화" fw-alone="N" fw-msg=""
                                                value="" type="number"/>
                                         <input type="hidden" name="mobileNumber">
+
+<%--                                        <label for="inputPhoneNumber"></label>--%>
+<%--                                        <input type="text" id="inputPhoneNumber" name="phoneNumber1">--%>
+
+                                        <button type="button" id="sendPhoneNumber">인증번호받기</button>
+
+                                        <input type="text" id="inputCertificateNumber" placeholder="인증번호입력">
+                                        <button type="button" id="checkBtn" value="인증번호확인">인증번호확인</button>
+
+
+
+                                        <p id="result">발송준비</p>
+
+
+
                                     </span>
                             </div>
 
@@ -419,6 +433,8 @@
         </div>
     </div>
 </div>
+
+
 <script type="text/javascript">
 
 </script>
@@ -512,7 +528,7 @@
 
             f.phoneNumber.value = f.phoneNumber1.value + "-" + f.phoneNumber2.value + "-" + f.phoneNumber3.value;
             f.mobileNumber.value = f.mobileNumber1.value + "-" + f.mobileNumber2.value + "-" + f.mobileNumber3.value;
-            f.userAddress.value = f.postcode.value + "/" + f.address.value  + "/" + f.extraAddress.value + "/" + f.detailAddress.value;
+            f.userAddress.value = f.postcode.value + "/" + f.address.value + "/" + f.extraAddress.value + "/" + f.detailAddress.value;
             f.submit();
 
         } else {
@@ -527,6 +543,54 @@
     });
 
 
+</script>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+    $(document).ready(function (){
+
+        var f = document.frm;
+
+        $('#sendPhoneNumber').click(function (){
+            var phone = f.mobileNumber1.value + "-" + f.mobileNumber2.value + "-" + f.mobileNumber3.value;
+
+            if (phone == 0){
+                $('#result').text('전화번호를 입력하세요');
+                return;
+            }
+            // ajax 사용
+            $.ajax({
+                type : 'GET',
+                url:'phoneCertificationAction.jsp',
+                dataType : 'text',
+                data: {phoneNumber : phone},
+                success: function(data){
+                    cerNum = data.trim();
+                    $('#result').text('발송완료');
+
+                    $('#checkBtn').click(function () {
+                        if ($('#inputCertificateNumber').val() == cerNum) {
+                            $('#result').text("인증완료");
+                            document.getElementById("mobile1").disabled=true;
+                            document.getElementById("mobile2").disabled=true;
+                            document.getElementById("mobile3").disabled=true;
+                            document.getElementById("inputCertificateNumber").disabled=true;
+
+                        } else{
+                            $('#result').text("인증완료실패");
+                        }
+                    });
+                },
+                error: function(){
+                    $('#result').text('실패')
+                }
+            });
+        });
+    });
 </script>
 </body>
 </html>

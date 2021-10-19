@@ -61,6 +61,7 @@ public class UserDAO {
                 UserDTO userDTO = new UserDTO(id, password, name, address, mobileNumber, phoneNumber, email);
 
                 return userDTO;
+<<<<<<< HEAD
             }
 
 //            return -1; //아이디가 없음
@@ -126,6 +127,8 @@ public class UserDAO {
                 UserDTO userDTO = new UserDTO(phoneNumber1, phoneNumber2, phoneNumber3, mobileNumber1, mobileNumber2, mobileNumber3);
 
                 return userDTO;
+=======
+>>>>>>> 29da850dee530697d34243d63d4b283fe6add4fd
             }
 
 //            return -1; //아이디가 없음
@@ -138,7 +141,79 @@ public class UserDAO {
     }
 
 
+<<<<<<< HEAD
     public int register(UserDTO user) {
+=======
+
+    public UserDTO viewAddress(String userID) {
+        String SQL = "SELECT REGEXP_SUBSTR(ADDRESS, '[^/]+',1,1) AS POSTCODE , REGEXP_SUBSTR(ADDRESS, '[^/]+',1,2) AS ADDRESS, REGEXP_SUBSTR(ADDRESS, '[^/]+',1,3) AS DETAILADDRESS, REGEXP_SUBSTR(ADDRESS, '[^/]+',1,4) AS EXTRAADDRESS FROM SHOPUSER WHERE ID = ?";
+        ResultSetMetaData rsmd;
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, userID);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                String postcode = rs.getString("POSTCODE");
+                String address = rs.getString("ADDRESS");
+                String detailAddress = rs.getString("DETAILADDRESS");
+                String extraAddress = rs.getString("EXTRAADDRESS");
+                rsmd = rs.getMetaData();
+                System.out.println("rsmd.getColumnName(1) = " + rsmd.getColumnName(1));
+                System.out.println("rsmd.getColumnName(1) = " + rsmd.getColumnName(2));
+                System.out.println("rsmd.getColumnName(1) = " + rsmd.getColumnName(3));
+                System.out.println("rsmd.getColumnName(1) = " + rsmd.getColumnName(4));
+
+
+                UserDTO userDTO = new UserDTO(postcode, address, detailAddress, extraAddress);
+
+                return userDTO;
+            }
+
+//            return -1; //아이디가 없음
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            dbClose();
+        }
+        return null;
+    }
+
+    public UserDTO viewNumber(String userID) {
+        String SQL = "SELECT REGEXP_SUBSTR(PHONENUMBER, '[^-]+',1,1)AS PHONENUMBER1 , REGEXP_SUBSTR(PHONENUMBER, '[^-]+',1,2)AS PHONENUMBER2, REGEXP_SUBSTR(PHONENUMBER, '[^-]+',1,3)AS PHONENUMBER3, REGEXP_SUBSTR(MOBILENUMBER, '[^-]+',1,1)AS MOBILENUMBER1, REGEXP_SUBSTR(MOBILENUMBER, '[^-]+',1,2)AS MOBILENUMBER2, REGEXP_SUBSTR(MOBILENUMBER, '[^-]+',1,3)AS MOBILENUMBER3 FROM SHOPUSER WHERE ID = ?";
+        ResultSetMetaData rsmd1;
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, userID);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                String phoneNumber1 = rs.getString("PHONENUMBER1");
+                String phoneNumber2 = rs.getString("PHONENUMBER2");
+                String phoneNumber3 = rs.getString("PHONENUMBER3");
+                String mobileNumber1 = rs.getString("MOBILENUMBER1");
+                String mobileNumber2 = rs.getString("MOBILENUMBER2");
+                String mobileNumber3 = rs.getString("MOBILENUMBER3");
+
+
+                UserDTO userDTO = new UserDTO(phoneNumber1, phoneNumber2, phoneNumber3, mobileNumber1, mobileNumber2, mobileNumber3);
+
+                return userDTO;
+            }
+
+//            return -1; //아이디가 없음
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            dbClose();
+        }
+        return null;
+    }
+
+
+
+    public int join(UserDTO user){
+>>>>>>> 29da850dee530697d34243d63d4b283fe6add4fd
         String SQL = "INSERT INTO SHOPUSER VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             pstmt = conn.prepareStatement(SQL);
