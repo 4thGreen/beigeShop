@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,22 +7,23 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Top navbar example · Bootstrap v5.1</title>
+    <title>Beige</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-static/">
 
 
-
     <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
 
     <%--    font    --%>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Sunflower:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Sunflower:wght@300&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"/>
     <link href="sidebars.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
@@ -44,33 +45,29 @@
     <style>
 
 
-
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
         }
-        .navbar .justify-content-md-center{
+
+        .navbar .justify-content-md-center {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
         }
-        .flex-shrink-0 .p-3{
+
+        .flex-shrink-0 .p-3 {
 
         }
 
-        .mun-formSP{
+        .mun-formSP {
             font-family: 'Sunflower', sans-serif;
         }
 
         #modify {
             min-height: 100vh;
 
-            /*background: -webkit-gradient(linear, left bottom, right top, from(#92b5db), to(#1d466c));*/
-            /*background: -webkit-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);*/
-            /*background: -moz-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);*/
-            /*background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);*/
-            /*background: linear-gradient(to top right, #92b5db 0%, #1d466c 100%);*/
         }
 
         .input-form {
@@ -82,17 +79,45 @@
             background: #fff;
 
 
-
             /*-webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);*/
             /*-moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);*/
             /*box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)*/
         }
-        #loginButton{
+
+        #loginButton {
             background-color: #b09173;
         }
+
+
+        #color, #color1, #color2, #color3 {
+            background-color: transparent;
+        }
+
+        .list-unstyled .collapse .btn-toggle-nav .link-dark {
+            background-color: transparent;
+            border-color: gray;
+        }
+
+        .collapse .navbar-nav .nav-item .nav-link {
+
+            -moz-transition: background, 0.5s;
+            -o-transition: background, 0.5s;
+            -webkit-transition: background, 0.5s;
+            transition: background, 0.5s;
+
+        }
+
+        .collapse .navbar-nav .nav-item .nav-link:hover {
+            color: rgba(150, 6, 6, 0.85);
+        }
+
+        #orderLists tr, #orderLists td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+
     </style>
-
-
 
 
 </head>
@@ -107,10 +132,12 @@
     <div class="container-fluid">
 
 
-        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08" ><h2>BASIC</h2></a>
+        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08"><h2>Beige</h2></a>
 
 
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation" >
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon "></span>
         </button>
         <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample09">
@@ -156,28 +183,25 @@
     </div>
 </nav>
 
-<%--<main class="container">--%>
-<%--    <div class="bg-light p-5 rounded">--%>
-<%--        <h1>Navbar example</h1>--%>
-<%--        <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>--%>
-<%--        <a class="btn btn-lg btn-primary"  role="button">View navbar docs &raquo;</a>--%>
-<%--    </div>--%>
-<%--</main>--%>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
             <!-- 사이드 바 메뉴-->
             <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
                 <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none">
-                    <svg class="bi me-2" width="30" height="70"><use xlink:href="#bootstrap"></use></svg>
-                    <%--                    <span class="fs-5 fw-semibold">Collapsible</span>--%>
+                    <svg class="bi me-2" width="30" height="70">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+
                 </a>
                 <ul class="list-unstyled ps-0">
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                        <button class="btn btn-light btn-toggle align-items-center rounded collapsed "
+                                data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false"
+                                id="color">
                             OUTER
                         </button>
-                        <div class="collapse " id="home-collapse">
+                        <div class="collapse" id="home-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 <li><a href="#" class="link-dark rounded">ZIP UP HOODIE</a></li>
                                 <li><a href="#" class="link-dark rounded">COAT</a></li>
@@ -186,7 +210,8 @@
                         </div>
                     </li>
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#dashboard-collapse" aria-expanded="false" id="color1">
                             PANTS
                         </button>
                         <div class="collapse" id="dashboard-collapse">
@@ -199,7 +224,8 @@
                         </div>
                     </li>
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#orders-collapse" aria-expanded="false" id="color2">
                             SHOES
                         </button>
                         <div class="collapse" id="orders-collapse">
@@ -213,7 +239,8 @@
                     </li>
                     <%--                    <li class="border-top my-3"></li>--%>
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#account-collapse" aria-expanded="false" id="color3">
                             Account
                         </button>
                         <div class="collapse" id="account-collapse">
@@ -251,27 +278,34 @@
                     <div class="input-form col-md-12 mx-auto">
                         <h4 class="mb-3"></h4>
                         <form class="validation-form" novalidate action="loginAction.jsp" method="post">
-                            <div class="row" >
+                            <div class="row">
                                 <div class="col-md-5 ">
-<%--                                    <label for="userId">아이디</label>--%>
-                                    <input type="text" class="form-control" name="userId" id="userId" placeholder="ID" value="" required>
+                                    <%--                                    <label for="userId">아이디</label>--%>
+                                    <input type="text" class="form-control" name="userId" id="userId" placeholder="ID"
+                                           value="" required>
 
-<%--                                    <label for="userPassword">비밀번호</label>--%>
-                                    <input type="password" class="form-control" name="userPassword" id="userPassword" placeholder="PASSWORD" value="" required>
+                                    <%--                                    <label for="userPassword">비밀번호</label>--%>
+                                    <input type="password" class="form-control" name="userPassword" id="userPassword"
+                                           placeholder="PASSWORD" value="" required>
                                     <hr class="mb-4">
-                                  <button class="btn btn-primary btn-sm btn-block " id="loginButton" type="submit" formaction="loginAction.jsp">LOGIN</button>
+                                    <button class="btn btn-primary btn-sm btn-block " id="loginButton" type="submit"
+                                            formaction="loginAction.jsp">LOGIN
+                                    </button>
+                                        <button class="btn btn-primary btn-sm btn-block " id="loginButton" type="submit"
+                                                formaction="register.jsp">REGISTER
+                                        </button>
                                 </div>
-<%--                                <div class="col-md-6 mb-3">--%>
+                                <%--                                <div class="col-md-6 mb-3">--%>
 
-<%--                                </div>--%>
-<%--                            <hr class="mb-4">--%>
+                                <%--                                </div>--%>
+                                <%--                            <hr class="mb-4">--%>
                                 <div class="mb-4"></div>
                             </div>
                         </form>
                     </div>
                 </div>
                 <footer class="my-3 text-center text-small">
-                    <p class="mb-1">&copy; 2021 BASIC</p>
+                    <p class="mb-1">&copy; 2021 Beige</p>
                 </footer>
             </div>
 
@@ -281,7 +315,9 @@
 <script type="text/javascript">
 
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
 <script src="./js/sidebars.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 
