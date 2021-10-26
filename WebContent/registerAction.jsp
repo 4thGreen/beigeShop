@@ -16,6 +16,8 @@
 <jsp:setProperty name="user" property="mobileNumber"/>
 <jsp:setProperty name="user" property="phoneNumber"/>
 <jsp:setProperty name="user" property="userAddress"/>
+<jsp:setProperty name="user" property="userSingUp"/>
+<jsp:setProperty name="user" property="userGrade"/>
 <html>
 <head>
     <title>Title</title>
@@ -25,6 +27,10 @@
 
     request.setCharacterEncoding("UTF-8");
     UserDAO userDAO = new UserDAO();
+    System.out.println("user.getUserAddress() = " + user.getUserAddress());
+    System.out.println("user.getMobileNumber() = " + user.getMobileNumber());
+    System.out.println("user.getPhoneNumber() = " + user.getPhoneNumber());
+    System.out.println("user.getUserSingUp() = " + user.getUserSingUp());
 
     int result = userDAO.register(user);
 

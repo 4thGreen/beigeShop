@@ -18,9 +18,10 @@ public class OrderDTO {
     private final String status;
     private final String request;
     private final Long tracking;
+    private  String type;
 
 
-    public OrderDTO(Long orderNumber, Long productNumber, int quantity, int price, String orderDate, String status, String request, Long tracking) {
+    public OrderDTO(Long orderNumber, Long productNumber, int quantity, int price, String orderDate, String status, String request, Long tracking, String type) {
         this.orderNumber = orderNumber;
         this.productNumber = productNumber;
         this.quantity = quantity;
@@ -29,6 +30,7 @@ public class OrderDTO {
         this.status = status;
         this.request = request;
         this.tracking = tracking;
+        this.type = type;
     }
 
     public Long getOrderNumber() {
@@ -61,5 +63,9 @@ public class OrderDTO {
 
     public Long getTracking() {
         return tracking;
+    }
+
+    public String getType() {
+        return type;
     }
 }

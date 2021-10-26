@@ -24,8 +24,10 @@
 </head>
 <body>
 <%
+
     request.setCharacterEncoding("UTF-8");
     UserDAO userDAO = new UserDAO();
+
     int result = userDAO.updateMember(user);
 
     if (result == 1){

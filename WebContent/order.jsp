@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Top navbar example · Bootstrap v5.1</title>
+    <title>Beige</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-static/">
 
@@ -106,7 +106,7 @@
     <div class="container-fluid">
 
 
-        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08"><h2>BASIC</h2></a>
+        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08"><h2>Beige</h2></a>
 
 
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
@@ -253,10 +253,9 @@
             <h4>Order List</h4>
             <div class="col-md-10" id="tables">
                 <p>> 주문내역조회</p>
-                <p>> 취소/반품/교환 내역</p>
             </div>
             <div>
-                <form method="get" action="order.jsp?<%=request.getParameter("date")%>">
+                <form method="post" action="order.jsp?<%=request.getParameter("date")%>">
                     <%--                    <input type="text" class="selector" placeholder="날짜를 선택하세요." />--%>
                     <%--                    <a class="input-button" title="toggle" data-toggle><i class="icon-calendar"></i></a> ~--%>
                     <table>
@@ -269,7 +268,7 @@
                                 ~
                             </td>
                             <td>
-                                <input type="text" class="selectors" name="endDate" placeholder="날짜를 선택하세요."/>
+                                <input type="text" class="selectors1" name="endDate" placeholder="날짜를 선택하세요."/>
                                 <a class="input-button" title="toggle" data-toggle><i class="icon-calendar"></i></a>
                             </td>
                             <td>
@@ -293,6 +292,8 @@
                     List<OrderDTO> orderDTOList;
                     OrderDAO orderDAO = new OrderDAO();
 
+                    System.out.println("requestStartDate = " + requestStartDate);
+                    System.out.println("requestEndDate = " + requestEndDate);
                     if (requestStartDate != null) {
 
                         orderDTOList = orderDAO.viewOrderTwoDate(String.valueOf(session.getAttribute("userID")), requestStartDate, requestEndDate);
@@ -376,8 +377,18 @@ $(".selectors").flatpickr({
     // mode: "range",
     altInput: true,
     altFormat: "Y, F j",
-    dateFormat: "Y-m-d",
+    dateFormat: "Y-m-d H:i",
     defaultDate: "today"
+
+});
+$(".selectors1").flatpickr({
+    // mode: "range",
+    altInput: true,
+    altFormat: "Y, F j",
+    dateFormat: "Y-m-d 23:59",
+    defaultDate: "today"
+
+
 });
 
 // $(function(){

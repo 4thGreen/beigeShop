@@ -254,8 +254,10 @@
             UserDTO numberList = numberDAO.viewNumber(id);
 
             Date nowTime = new Date();
-            SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+//            SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            SimpleDateFormat sf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             System.out.println("sf.format(nowTime) = " + sf.format(nowTime));
+
         %>
 
 
@@ -272,6 +274,7 @@
                                 <div class="col-md-6">
 
                                     <input type="hidden" value="<%=sf.format(nowTime)%>" name="userSingUp">
+                                    <input type="hidden" value="1" name="userGrade">
                                     <%--                                    <input type="hidden" value="<%=%>"--%>
 
 
@@ -362,6 +365,7 @@
                                         <input id="phone3" name="phoneNumber3" maxlength="4"
                                                fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg=""
                                                value="" type="number"/>
+                                        <input type="hidden" name="phoneNumber">
 
                                     </span>
                             </div>
@@ -418,8 +422,8 @@
 
                             <hr class="mb-4">
                             <div class="mb-4 d-grid gap-2 d-md-flex justify-content-md-end">
-                                <button class="btn btn-primary btn-sm btn-block" type="submit" id="editSubmit"
-                                        formaction="registerAction.jsp">회원가입
+                                <button class="btn btn-primary btn-sm btn-block"  id="editSubmit" type="button"
+                                        >회원가입
                                 </button>
                             </div>
                         </form>
@@ -529,6 +533,7 @@
             f.phoneNumber.value = f.phoneNumber1.value + "-" + f.phoneNumber2.value + "-" + f.phoneNumber3.value;
             f.mobileNumber.value = f.mobileNumber1.value + "-" + f.mobileNumber2.value + "-" + f.mobileNumber3.value;
             f.userAddress.value = f.postcode.value + "/" + f.address.value + "/" + f.extraAddress.value + "/" + f.detailAddress.value;
+            alert("정상");
             f.submit();
 
         } else {
@@ -538,8 +543,8 @@
 
         }
 
-        document.querySelector('select').value = '031';
-        document.querySelector('select').onchange();
+        // document.querySelector('select').value = '031';
+        // document.querySelector('select').onchange();
     });
 
 
@@ -573,6 +578,8 @@
                     $('#result').text('발송완료');
 
                     $('#checkBtn').click(function () {
+                        console.log(cerNum);
+                        console.log($('#inputCertificateNumber').val())
                         if ($('#inputCertificateNumber').val() == cerNum) {
                             $('#result').text("인증완료");
                             document.getElementById("mobile1").disabled=true;

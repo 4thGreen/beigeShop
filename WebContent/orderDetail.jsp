@@ -3,6 +3,7 @@
 <%@ page import="order.OrderDTO" %>
 <%@ page import="user.UserDAO" %>
 <%@ page import="user.UserDTO" %>
+<%@ page import="java.text.DecimalFormat" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
@@ -13,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Top navbar example · Bootstrap v5.1</title>
+    <title>Beige</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-static/">
 
@@ -246,6 +247,7 @@
             UserDAO userDAO = new UserDAO();
             UserDTO userDTO =  userDAO.view((String) session.getAttribute("userID"));
             System.out.println("(String)session.getAttribute(\"userID\") = " + session.getAttribute("userID"));
+            DecimalFormat dc = new DecimalFormat("###,###,###");
         %>
 
         <div class="col-md-10" id="title">
@@ -275,7 +277,7 @@
                     <caption>결제정보</caption>
                     <tr>
                         <td>주문금액</td>
-                        <td><%=orderDetail.getPrice()%></td>
+                        <td><%=dc.format(orderDetail.getPrice())%> KRW </td>
                     </tr>
                 </table>
 
@@ -290,7 +292,7 @@
                     <tr>
                         <td><%=orderDetail.getProductNumber()%></td>
                         <td><%=orderDetail.getQuantity()%></td>
-                        <td><%=orderDetail.getPrice()%> KRW</td>
+                        <td><%=dc.format(orderDetail.getPrice())%> KRW</td>
                         <td><%=orderDetail.getStatus()%></td>
                     </tr>
                 </table>

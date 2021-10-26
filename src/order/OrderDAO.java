@@ -45,8 +45,8 @@ public class OrderDAO {
                 String status = rs.getString("STATUS");
                 String request = rs.getString("REQUEST");
                 Long tracking = rs.getLong("TRACKING");
-                OrderDTO orderDTO = new OrderDTO(orderNo, productNo, quantity, price, orderDate, status, request, tracking);
-                orderDTOList.add(orderDTO);
+//                OrderDTO orderDTO = new OrderDTO(orderNo, productNo, quantity, price, orderDate, status, request, tracking, );
+//                orderDTOList.add(orderDTO);
                 System.out.println("orderDTOList.size = " + orderDTOList.size());
             }
             return orderDTOList;
@@ -62,7 +62,20 @@ public class OrderDAO {
 
     public List<OrderDTO> viewOrderTwoDate(String userID, String OrderStartDate, String OrderEndDate) {
 //        List<OrderDTO> orderDTOList = null;
-        String SQL = "SELECT * FROM ORDERLIST WHERE ID = ? AND ORDERDATE BETWEEN ? AND ?";
+//        String SQL = "SELECT * FROM ORDERLIST WHERE ID = ? AND ORDERDATE BETWEEN ? AND ?";
+        String SQL = "select m_id" +
+                "     , o_id" +
+                "     , s_id" +
+                "     , o_quantity" +
+                "     , o_price" +
+                "     , TO_CHAR(o_date, 'yyyy-mm-dd hh24:mi:ss') AS o_date" +
+                "     , o_status" +
+                "     , o_comment" +
+                "     , o_ship" +
+                "     , o_type" +
+                "     from beige_order" +
+                "     WHERE m_id = ?" +
+                "    AND o_date BETWEEN TO_DATE(?, 'YYYY-MM-DD HH24:MI:SS') AND TO_DATE(?, 'YYYY-MM-DD HH24:MI:SS')";
         try {
             pstmt = conn.prepareStatement(SQL);
             pstmt.setString(1, userID);
@@ -71,16 +84,17 @@ public class OrderDAO {
             rs = pstmt.executeQuery();
             while (rs.next()) {
 
-                String id = rs.getString("ID");
-                Long orderNo = rs.getLong("ORDERNO");
-                Long productNo = rs.getLong("PRODUCTNO");
-                int quantity = rs.getInt("QUANTITY");
-                int price = rs.getInt("PRICE");
-                String orderDate = rs.getString("ORDERDATE");
-                String status = rs.getString("STATUS");
-                String request = rs.getString("REQUEST");
-                Long tracking = rs.getLong("TRACKING");
-                OrderDTO orderDTO = new OrderDTO(orderNo, productNo, quantity, price, orderDate, status, request, tracking);
+                String id = rs.getString("m_id");
+                Long orderNo = rs.getLong("o_id");
+                Long productNo = rs.getLong("s_id");
+                int quantity = rs.getInt("o_quantity");
+                int price = rs.getInt("o_price");
+                String orderDate = rs.getString("o_date");
+                String status = rs.getString("o_status");
+                String request = rs.getString("o_comment");
+                Long tracking = rs.getLong("o_ship");
+                String type = rs.getString("o_type");
+                OrderDTO orderDTO = new OrderDTO(orderNo, productNo, quantity, price, orderDate, status, request, tracking, type);
                 orderDTOList.add(orderDTO);
                 System.out.println("orderDTOList.size = " + orderDTOList.size());
             }
@@ -95,10 +109,9 @@ public class OrderDAO {
     }
 
 
-
     public OrderDTO orderDetailView(long orderNumber) {
 //        List<OrderDTO> orderDTOList = null;
-        String SQL = "SELECT * FROM ORDERLIST WHERE ORDERNO = ?";
+        String SQL = "SELECT * FROM beige_order WHERE o_id = ?";
         try {
             pstmt = conn.prepareStatement(SQL);
             pstmt.setLong(1, orderNumber);
@@ -106,16 +119,17 @@ public class OrderDAO {
             rs = pstmt.executeQuery();
             if (rs.next()) {
 
-                String id = rs.getString("ID");
-                Long orderNo = rs.getLong("ORDERNO");
-                Long productNo = rs.getLong("PRODUCTNO");
-                int quantity = rs.getInt("QUANTITY");
-                int price = rs.getInt("PRICE");
-                String orderDate = rs.getString("ORDERDATE");
-                String status = rs.getString("STATUS");
-                String request = rs.getString("REQUEST");
-                Long tracking = rs.getLong("TRACKING");
-                OrderDTO orderDTO = new OrderDTO(orderNo, productNo, quantity, price, orderDate, status, request, tracking);
+                String id = rs.getString("m_id");
+                Long orderNo = rs.getLong("o_id");
+                Long productNo = rs.getLong("s_id");
+                int quantity = rs.getInt("o_quantity");
+                int price = rs.getInt("o_price");
+                String orderDate = rs.getString("o_date");
+                String status = rs.getString("o_status");
+                String request = rs.getString("o_comment");
+                Long tracking = rs.getLong("o_ship");
+                String type = rs.getString("o_type");
+                OrderDTO orderDTO = new OrderDTO(orderNo, productNo, quantity, price, orderDate, status, request, tracking, type);
 //                orderDTOList.add(orderDTO);
 //                System.out.println("orderDTOList.size = " + orderDTOList.size());
                 return orderDTO;
@@ -128,7 +142,6 @@ public class OrderDAO {
         }
         return null;
     }
-
 
 
     public void dbClose() {
