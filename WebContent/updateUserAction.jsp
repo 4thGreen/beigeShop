@@ -8,14 +8,24 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id="user" class="user.UserDTO"/>
-<jsp:setProperty name="user" property="userId"/>
+<%--<jsp:setProperty name="user" property="userId"/>--%>
+<%--<jsp:setProperty name="user" property="userPassword"/>--%>
+<%--<jsp:setProperty name="user" property="userEmail"/>--%>
+<%--<jsp:setProperty name="user" property="userName"/>--%>
+<%--<jsp:setProperty name="user" property="mobileNumber"/>--%>
+<%--<jsp:setProperty name="user" property="phoneNumber"/>--%>
+<%--<jsp:setProperty name="user" property="userAddress"/>--%>
+<%--<jsp:setProperty name="user" property="userPasswordCheck"/>--%>
+
 <jsp:setProperty name="user" property="userPassword"/>
-<jsp:setProperty name="user" property="userEmail"/>
 <jsp:setProperty name="user" property="userName"/>
+<jsp:setProperty name="user" property="userAddress"/>
 <jsp:setProperty name="user" property="mobileNumber"/>
 <jsp:setProperty name="user" property="phoneNumber"/>
-<jsp:setProperty name="user" property="userAddress"/>
-<%--<jsp:setProperty name="user" property="userPasswordCheck"/>--%>
+<jsp:setProperty name="user" property="userEmail"/>
+<jsp:setProperty name="user" property="userId"/>
+<%--<jsp:setProperty name="user" property="userSingUp"/>--%>
+<%--<jsp:setProperty name="user" property="userGrade"/>--%>
 
 <html>
 <head>

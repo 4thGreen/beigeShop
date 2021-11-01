@@ -38,13 +38,6 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 
-    <!-- Favicons -->
-    <%--    <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">--%>
-    <%--    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">--%>
-    <%--    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">--%>
-    <%--    <link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">--%>
-    <%--    <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">--%>
-    <%--    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">--%>
     <meta name="theme-color" content="#7952b3">
 
 
@@ -97,7 +90,7 @@
 
     </style>
 
-
+    <script type="text/javascript" src="script.js" charset="utf-8" ></script>
 </head>
 <body>
 <%
@@ -162,13 +155,6 @@
     </div>
 </nav>
 
-<%--<main class="container">--%>
-<%--    <div class="bg-light p-5 rounded">--%>
-<%--        <h1>Navbar example</h1>--%>
-<%--        <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>--%>
-<%--        <a class="btn btn-lg btn-primary"  role="button">View navbar docs &raquo;</a>--%>
-<%--    </div>--%>
-<%--</main>--%>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
@@ -178,7 +164,6 @@
                     <svg class="bi me-2" width="30" height="70">
                         <use xlink:href="#bootstrap"></use>
                     </svg>
-                    <%--                    <span class="fs-5 fw-semibold">Collapsible</span>--%>
                 </a>
                 <ul class="list-unstyled ps-0">
                     <li class="mb-1">
@@ -254,7 +239,6 @@
             UserDTO numberList = numberDAO.viewNumber(id);
 
             Date nowTime = new Date();
-//            SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             SimpleDateFormat sf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             System.out.println("sf.format(nowTime) = " + sf.format(nowTime));
 
@@ -275,12 +259,43 @@
 
                                     <input type="hidden" value="<%=sf.format(nowTime)%>" name="userSingUp">
                                     <input type="hidden" value="1" name="userGrade">
-                                    <%--                                    <input type="hidden" value="<%=%>"--%>
 
 
                                     <label for="userId">아이디</label>
                                     <input type="text" class="form-control" id="userId" name="userId" placeholder=""
                                            value="" required>
+                                    <div class="check_font" id="checkId" name="checkId"></div>
+
+
+
+                                    <script>
+                                        $("#userId").blur(function(){
+                                            var userId = $('#userId').val();
+                                            var checkId = $('#checkId');
+                                            $.ajax({
+                                                url : 'checkArticle.jsp',
+                                                type : 'get',
+                                                dataType : 'text',
+                                                data : {userId : userId},
+                                                success : function(data){
+                                                    console.log('성공');
+                                                    console.log(data.trim());
+                                                    if (data == 1){
+                                                        console.log('중복된 아이디');
+                                                        checkId.text("중복된 아이디입니다.")
+                                                    } else {
+                                                        console.log('중복아님');
+                                                        checkId.text("사용가능한 아이디입니다.")
+
+                                                    }
+                                                }
+
+                                            })
+                                        })
+                                    </script>
+
+
+
 
                                 </div>
                                 <div class="col-md-6 mb-3">
@@ -328,43 +343,15 @@
 
                             <div class="mun-title">일반전화</div>
                             <div class="mun-desc"><span class="mun-formSP">
-<%--                                <select id="phone1" name="phoneNumber1" fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg="">--%>
-
-<%--                                        <option value="02">02</option>--%>
-<%--                                        <option value="031">031</option>--%>
-<%--                                        <option value="032">032</option>--%>
-<%--                                        <option value="033">033</option>--%>
-<%--                                        <option value="041">041</option>--%>
-<%--                                        <option value="042">042</option>--%>
-<%--                                        <option value="043">043</option>--%>
-<%--                                        <option value="044">044</option>--%>
-<%--                                        <option value="051">051</option>--%>
-<%--                                        <option value="052">052</option>--%>
-<%--                                        <option value="053">053</option>--%>
-<%--                                        <option value="054">054</option>--%>
-<%--                                        <option value="055">055</option>--%>
-<%--                                        <option value="061">061</option>--%>
-<%--                                        <option value="062">062</option>--%>
-<%--                                        <option value="063">063</option>--%>
-<%--                                        <option value="064">064</option>--%>
-<%--                                        <option value="070">070</option>--%>
-<%--                                        <option value="010">010</option>--%>
-<%--                                        <option value="011">011</option>--%>
-<%--                                        <option value="016">016</option>--%>
-<%--                                        <option value="017">017</option>--%>
-<%--                                        <option value="018">018</option>--%>
-<%--                                        <option value="019">019</option>--%>
-
-<%--                                    </select>---%>
-                                         <input id="phone1" name="phoneNumber1" maxlength="4"
+                                         <input id="phone1" name="phoneNumber1" maxlength="3"
                                                 fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg=""
-                                                value="" type="number"/>-
+                                                value="" type="text"/>-
                                         <input id="phone2" name="phoneNumber2" maxlength="4"
                                                fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg=""
-                                               value="" type="number"/>-
+                                               value="" type="text"/>-
                                         <input id="phone3" name="phoneNumber3" maxlength="4"
                                                fw-filter="isNumber&isNumber" fw-label="일반전화" fw-alone="N" fw-msg=""
-                                               value="" type="number"/>
+                                               value="" type="text"/>
                                         <input type="hidden" name="phoneNumber">
 
                                     </span>
@@ -374,37 +361,25 @@
                             <div class="mun-title">휴대전화</div>
                             <div class="mun-desc">
                                 <span class="mun-formSP">
-<%--                                    <select id="mobile1" name="mobileNumber1" fw-filter="isNumber&isFill" fw-label="휴대전화" fw-alone="N" fw-msg="">--%>
-
-<%--                                        <option value="010">010</option>--%>
-<%--                                        <option value="011">011</option>--%>
-<%--                                        <option value="016">016</option>--%>
-<%--                                        <option value="017">017</option>--%>
-<%--                                        <option value="018">018</option>--%>
-<%--                                        <option value="019">019</option>--%>
-<%--                                </select>---%>
-                                        <input id="mobile1" name="mobileNumber1" maxlength="4"
+                                        <input id="mobile1" name="mobileNumber1" maxlength="3"
                                                fw-filter="isNumber&isNumber" fw-label="휴대전화" fw-alone="N" fw-msg=""
-                                               value="" type="number"/>-
+                                               value="" type="text"/>-
                                         <input id="mobile2" name="mobileNumber2" maxlength="4"
                                                fw-filter="isNumber&isNumber" fw-label="휴대전화" fw-alone="N" fw-msg=""
-                                               value="" type="number"/>-
+                                               value="" type="text"/>-
                                         <input id="mobile3" name="mobileNumber3" maxlength="4"
                                                fw-filter="isNumber&isNumber" fw-label="휴대전화" fw-alone="N" fw-msg=""
-                                               value="" type="number"/>
+                                               value="" type="text"/>
                                         <input type="hidden" name="mobileNumber">
-
-<%--                                        <label for="inputPhoneNumber"></label>--%>
-<%--                                        <input type="text" id="inputPhoneNumber" name="phoneNumber1">--%>
 
                                         <button type="button" id="sendPhoneNumber">인증번호받기</button>
 
-                                        <input type="text" id="inputCertificateNumber" placeholder="인증번호입력">
+                                        <input type="text" id="inputCertificateNumber"  name="inputCertificateNumber" placeholder="인증번호입력">
                                         <button type="button" id="checkBtn" value="인증번호확인">인증번호확인</button>
 
 
 
-                                        <p id="result">발송준비</p>
+                                        <p id="result" name="result">발송준비</p>
 
 
 
@@ -422,7 +397,7 @@
 
                             <hr class="mb-4">
                             <div class="mb-4 d-grid gap-2 d-md-flex justify-content-md-end">
-                                <button class="btn btn-primary btn-sm btn-block"  id="editSubmit" type="button"
+                                <button class="btn btn-primary btn-sm btn-block"  id="editSubmit" type="button" onclick="register_check();"
                                         >회원가입
                                 </button>
                             </div>
@@ -525,28 +500,6 @@
         element_wrap.style.display = 'block';
     }
 
-    $('#editSubmit').click(function () {
-
-        var f = document.frm;
-        if (f.userPassword.value == f.userPasswordCheck.value) {
-
-            f.phoneNumber.value = f.phoneNumber1.value + "-" + f.phoneNumber2.value + "-" + f.phoneNumber3.value;
-            f.mobileNumber.value = f.mobileNumber1.value + "-" + f.mobileNumber2.value + "-" + f.mobileNumber3.value;
-            f.userAddress.value = f.postcode.value + "/" + f.address.value + "/" + f.extraAddress.value + "/" + f.detailAddress.value;
-            alert("정상");
-            f.submit();
-
-        } else {
-            alert("비밀번호를 확인해주세요.");
-            f.userPasswordCheck.focus();
-            return false;
-
-        }
-
-        // document.querySelector('select').value = '031';
-        // document.querySelector('select').onchange();
-    });
-
 
 </script>
 
@@ -556,48 +509,48 @@
         crossorigin="anonymous"></script>
 <script type="text/javascript">
 
-    $(document).ready(function (){
-
-        var f = document.frm;
-
-        $('#sendPhoneNumber').click(function (){
-            var phone = f.mobileNumber1.value + "-" + f.mobileNumber2.value + "-" + f.mobileNumber3.value;
-
-            if (phone == 0){
-                $('#result').text('전화번호를 입력하세요');
-                return;
-            }
-            // ajax 사용
-            $.ajax({
-                type : 'GET',
-                url:'phoneCertificationAction.jsp',
-                dataType : 'text',
-                data: {phoneNumber : phone},
-                success: function(data){
-                    cerNum = data.trim();
-                    $('#result').text('발송완료');
-
-                    $('#checkBtn').click(function () {
-                        console.log(cerNum);
-                        console.log($('#inputCertificateNumber').val())
-                        if ($('#inputCertificateNumber').val() == cerNum) {
-                            $('#result').text("인증완료");
-                            document.getElementById("mobile1").disabled=true;
-                            document.getElementById("mobile2").disabled=true;
-                            document.getElementById("mobile3").disabled=true;
-                            document.getElementById("inputCertificateNumber").disabled=true;
-
-                        } else{
-                            $('#result').text("인증완료실패");
-                        }
-                    });
-                },
-                error: function(){
-                    $('#result').text('실패')
-                }
-            });
-        });
-    });
+    // $(document).ready(function (){
+    //
+    //     var f = document.frm;
+    //
+    //     $('#sendPhoneNumber').click(function (){
+    //         var phone = f.mobileNumber1.value + "-" + f.mobileNumber2.value + "-" + f.mobileNumber3.value;
+    //
+    //         if (phone == 0){
+    //             $('#result').text('전화번호를 입력하세요');
+    //             return;
+    //         }
+    //         // ajax 사용
+    //         $.ajax({
+    //             type : 'GET',
+    //             url:'phoneCertificationAction.jsp',
+    //             dataType : 'text',
+    //             data: {phoneNumber : phone},
+    //             success: function(data){
+    //                 cerNum = data.trim();
+    //                 $('#result').text('발송완료');
+    //
+    //                 $('#checkBtn').click(function () {
+    //                     console.log(cerNum);
+    //                     console.log($('#inputCertificateNumber').val())
+    //                     if ($('#inputCertificateNumber').val() == cerNum) {
+    //                         $('#result').text("인증완료");
+    //                         document.getElementById("mobile1").disabled=true;
+    //                         document.getElementById("mobile2").disabled=true;
+    //                         document.getElementById("mobile3").disabled=true;
+    //                         document.getElementById("inputCertificateNumber").disabled=true;
+    //
+    //                     } else{
+    //                         $('#result').text("인증완료실패");
+    //                     }
+    //                 });
+    //             },
+    //             error: function(){
+    //                 $('#result').text('실패')
+    //             }
+    //         });
+    //     });
+    // });
 </script>
 </body>
 </html>

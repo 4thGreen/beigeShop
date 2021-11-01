@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 #navbarsExample08, #navbarsExample09{
-  font-family: 'Anton', sans-serif;
+  /*font-family: 'Anton', sans-serif;*/
+  font-family: 'Scheherazade New', serif;
 }
 
 #title{

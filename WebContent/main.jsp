@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Top navbar example · Bootstrap v5.1</title>
+    <title>Beige</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-static/">
 
@@ -23,6 +23,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css" />
     <link href="sidebars.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -32,13 +34,6 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 
-    <!-- Favicons -->
-    <%--    <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">--%>
-    <%--    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">--%>
-    <%--    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">--%>
-    <%--    <link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">--%>
-    <%--    <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">--%>
-    <%--    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">--%>
     <meta name="theme-color" content="#7952b3">
 
 
@@ -59,6 +54,35 @@
         .flex-shrink-0 .p-3{
 
         }
+        #color, #color1, #color2, #color3 {
+            background-color: transparent;
+        }
+
+        .list-unstyled .collapse .btn-toggle-nav .link-dark {
+            background-color: transparent;
+            border-color: gray;
+        }
+
+        .collapse .navbar-nav .nav-item .nav-link {
+            -moz-transition: background, 0.5s;
+            -o-transition: background, 0.5s;
+            -webkit-transition: background, 0.5s;
+            transition: background, 0.5s;
+
+        }
+
+        .collapse .navbar-nav .nav-item .nav-link:hover {
+            color: rgba(150, 6, 6, 0.85);
+        }
+
+        #orderLists tr, #orderLists td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+
+
+
 
     </style>
 
@@ -66,77 +90,24 @@
 
 
 </head>
+
 <body>
+
 <%
     String userID = null;
     if (session.getAttribute("userID") != null) {
         userID = (String) session.getAttribute("userID");
     }
 %>
-<%--<nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Tenth navbar example">--%>
-<%--    <div class="container-fluid">--%>
-<%--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">--%>
-<%--            <span class="navbar-toggler-icon"></span>--%>
-<%--        </button>--%>
-
-<%--        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">--%>
-<%--            <ul class="navbar-nav" id="center">--%>
-<%--                <li class="nav-item">--%>
-<%--                    <a class="nav-link active" aria-current="page" href="main.jsp" ><h2>BASIC</h2></a>--%>
-<%--                </li>--%>
-<%--            </ul>--%>
-<%--        </div>--%>
-<%--        <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample09">--%>
-<%--            <%--%>
-<%--                if (userID == null) {--%>
-<%--            %>--%>
-<%--            <ul class="navbar-nav">--%>
-<%--                <li class="nav-item">--%>
-<%--                    <a class="nav-link active" aria-current="page" href="login.jsp">LOGIN</a>--%>
-<%--                </li>--%>
-<%--                <li class="nav-item">--%>
-<%--                    <a class="nav-link active" aria-current="page" href="order.jsp">ORDER</a>--%>
-<%--                </li>--%>
-<%--                <li class="nav-item">--%>
-<%--                    <a class="nav-link active" aria-current="page" href="account.jsp">MY ACCOUNT</a>--%>
-<%--                </li>--%>
-<%--                <li class="nav-item">--%>
-<%--                    <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>--%>
-<%--                </li>--%>
-<%--            </ul>--%>
-
-<%--            <%--%>
-<%--            } else {--%>
-<%--            %>--%>
-
-<%--            <ul class="navbar-nav">--%>
-<%--                <li class="nav-item">--%>
-<%--                    <a class="nav-link active" aria-current="page" href="logoutAction.jsp">LOGOUT</a>--%>
-<%--                </li>--%>
-<%--                <li class="nav-item">--%>
-<%--                    <a class="nav-link active" aria-current="page" href="order.jsp">ORDER</a>--%>
-<%--                </li>--%>
-<%--                <li class="nav-item">--%>
-<%--                    <a class="nav-link active" aria-current="page" href="account.jsp">MY ACCOUNT</a>--%>
-<%--                </li>--%>
-<%--                <li class="nav-item">--%>
-<%--                    <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>--%>
-<%--                </li>--%>
-<%--            </ul>--%>
-<%--            <%--%>
-<%--                }--%>
-<%--            %>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</nav>--%>
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Tenth navbar example">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent" aria-label="Tenth navbar example">
     <div class="container-fluid">
 
 
-        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08" ><h2>BASIC</h2></a>
+        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08" ><h2>Beige</h2></a>
 
 
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation" >
@@ -147,8 +118,8 @@
                 if (userID == null) {
             %>
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.jsp">LOGIN</a>
+                <li class="nav-item asdasd">
+                    <a class="listSet nav-link active" aria-current="page" href="login.jsp">LOGIN</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="login.jsp">ORDER</a>
@@ -185,13 +156,7 @@
     </div>
 </nav>
 
-<%--<main class="container">--%>
-<%--    <div class="bg-light p-5 rounded">--%>
-<%--        <h1>Navbar example</h1>--%>
-<%--        <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>--%>
-<%--        <a class="btn btn-lg btn-primary"  role="button">View navbar docs &raquo;</a>--%>
-<%--    </div>--%>
-<%--</main>--%>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
@@ -203,10 +168,12 @@
                 </a>
                 <ul class="list-unstyled ps-0">
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                        <button class="btn btn-light btn-toggle align-items-center rounded collapsed "
+                                data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false"
+                                id="color">
                             OUTER
                         </button>
-                        <div class="collapse " id="home-collapse">
+                        <div class="collapse" id="home-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 <li><a href="#" class="link-dark rounded">ZIP UP HOODIE</a></li>
                                 <li><a href="#" class="link-dark rounded">COAT</a></li>
@@ -215,7 +182,8 @@
                         </div>
                     </li>
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#dashboard-collapse" aria-expanded="false" id="color1">
                             PANTS
                         </button>
                         <div class="collapse" id="dashboard-collapse">
@@ -228,7 +196,8 @@
                         </div>
                     </li>
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#orders-collapse" aria-expanded="false" id="color2">
                             SHOES
                         </button>
                         <div class="collapse" id="orders-collapse">
@@ -242,7 +211,8 @@
                     </li>
                     <%--                    <li class="border-top my-3"></li>--%>
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#account-collapse" aria-expanded="false" id="color3">
                             Account
                         </button>
                         <div class="collapse" id="account-collapse">
@@ -275,19 +245,46 @@
             <%
                 String id = (String) session.getAttribute("userID");
 
-//                UserDAO userDAO = new UserDAO();
-//                userDAO.view(id);
+                UserDAO userDAO = new UserDAO();
+
             %>
             <%=id%>님 환영합니다.
 
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/i.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/i.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+
+
         </div>
+
     </div>
 </div>
+
 <script type="text/javascript">
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 <script src="./js/sidebars.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

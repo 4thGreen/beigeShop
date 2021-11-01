@@ -4,7 +4,6 @@
 <%@ page import="user.UserDTO" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-    System.out.println("number1 = " + number1);
 
 <%
     String number1 = request.getParameter("phoneNumber");

@@ -151,8 +151,8 @@ public class UserDAO {
             pstmt.setInt(3, user.getUserGrade());
             pstmt.setString(4, user.getUserName());
             pstmt.setString(5, user.getUserAddress());
-            pstmt.setString(6, user.getPhoneNumber());
-            pstmt.setString(7, user.getMobileNumber());
+            pstmt.setString(6, user.getMobileNumber());
+            pstmt.setString(7, user.getPhoneNumber());
             pstmt.setString(8, user.getUserEmail());
             pstmt.setString(9, user.getUserSingUp());
             return pstmt.executeUpdate();
@@ -202,6 +202,33 @@ public class UserDAO {
             e.printStackTrace();
             System.out.println("dbClose() Exception!!!");
         }
+    }
+
+    public UserDTO defineUserId(String userID) {
+        String SQL = "SELECT m_id FROM beige_member WHERE m_id = ?";
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, userID);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                String id = rs.getString("m_id");
+
+                UserDTO userDTO = new UserDTO(id);
+
+                return userDTO;
+            } else {
+                return null;
+            }
+
+//            return -1; //아이디가 없음
+        } catch (Exception e) {
+//            e.printStackTrace();
+            return null;
+        }
+//        finally {
+//            dbClose();
+//        }
+//        return null;
     }
 
 

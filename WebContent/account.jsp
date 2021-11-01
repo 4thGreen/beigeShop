@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Top navbar example · Bootstrap v5.1</title>
+    <title>Beige</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-static/">
 
@@ -76,7 +76,7 @@
     <div class="container-fluid">
 
 
-        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08" ><h2>BASIC</h2></a>
+        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08" ><h2>Beige</h2></a>
 
 
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation" >

@@ -96,7 +96,7 @@
         }
 
     </style>
-
+    <script type="text/javascript" src="script.js" charset="utf-8"></script>
 
 </head>
 <body>
@@ -273,7 +273,7 @@
                                 <div class="col-md-6">
 
                                     <input type="hidden" value="<%=sf.format(nowTime)%>" name="userSingUp">
-<%--                                    <input type="hidden" value="<%=%>"--%>
+                                    <%--                                    <input type="hidden" value="<%=%>"--%>
 
 
                                     <label for="userId">아이디</label>
@@ -316,9 +316,9 @@
                                        value="<%=addressList.getPostcode()%>">
                                 <input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br>
                                 <input type="text" id="address" name="address" placeholder="주소"
-                                value="<%=addressList.getAddress()%>"><br>
+                                       value="<%=addressList.getAddress()%>"><br>
                                 <input type="text" id="extraAddress" name="extraAddress" placeholder="참고항목"
-                                value="<%=addressList.getExtraAddress()%>">
+                                       value="<%=addressList.getExtraAddress()%>">
                                 <input type="text" id="detailAddress" name="detailAddress" placeholder="상세주소"
                                        value="<%=addressList.getDetailAddress()%>">
                                 <input type="hidden" name="userAddress">
@@ -391,12 +391,15 @@
 <%--                                </select>---%>
                                         <input id="mobile1" name="mobileNumber1" maxlength="4"
                                                fw-filter="isNumber&isNumber" fw-label="휴대전화" fw-alone="N" fw-msg=""
+                                               disabled
                                                value="<%=numberList.getMobileNumber1()%>" type="number"/>-
                                         <input id="mobile2" name="mobileNumber2" maxlength="4"
                                                fw-filter="isNumber&isNumber" fw-label="휴대전화" fw-alone="N" fw-msg=""
+                                               disabled
                                                value="<%=numberList.getMobileNumber2()%>" type="number"/>-
                                         <input id="mobile3" name="mobileNumber3" maxlength="4"
                                                fw-filter="isNumber&isNumber" fw-label="휴대전화" fw-alone="N" fw-msg=""
+                                               disabled
                                                value="<%=numberList.getMobileNumber3()%>" type="number"/>
                                         <input type="hidden" name="mobileNumber">
                                     </span>
@@ -413,8 +416,9 @@
 
                             <hr class="mb-4">
                             <div class="mb-4 d-grid gap-2 d-md-flex justify-content-md-end">
-                                <button class="btn btn-primary btn-sm btn-block" type="submit" id="editSubmit"
-                                        formaction="updateUserAction.jsp">수정 완료
+                                <button class="btn btn-primary btn-sm btn-block" type="submit" id="updateSubmit"
+                                        onclick="update_check();"
+                                        >수정 완료
                                 </button>
                             </div>
                         </form>
@@ -514,26 +518,26 @@
         element_wrap.style.display = 'block';
     }
 
-    $('#editSubmit').click(function () {
-
-        var f = document.frm;
-        if (f.userPassword.value == f.userPasswordCheck.value) {
-
-            f.phoneNumber.value = f.phoneNumber1.value + "-" + f.phoneNumber2.value + "-" + f.phoneNumber3.value;
-            f.mobileNumber.value = f.mobileNumber1.value + "-" + f.mobileNumber2.value + "-" + f.mobileNumber3.value;
-            f.userAddress.value = f.postcode.value + "/" + f.address.value  + "/" + f.extraAddress.value + "/" + f.detailAddress.value;
-            f.submit();
-
-        } else {
-            alert("비밀번호를 확인해주세요.");
-            f.userPasswordCheck.focus();
-            return false;
-
-        }
-
-        document.querySelector('select').value = '031';
-        document.querySelector('select').onchange();
-    });
+    // $('#editSubmit').click(function () {
+    //
+    //     var f = document.frm;
+    //     if (f.userPassword.value == f.userPasswordCheck.value) {
+    //
+    //         f.phoneNumber.value = f.phoneNumber1.value + "-" + f.phoneNumber2.value + "-" + f.phoneNumber3.value;
+    //         f.mobileNumber.value = f.mobileNumber1.value + "-" + f.mobileNumber2.value + "-" + f.mobileNumber3.value;
+    //         f.userAddress.value = f.postcode.value + "/" + f.address.value  + "/" + f.extraAddress.value + "/" + f.detailAddress.value;
+    //         f.submit();
+    //
+    //     } else {
+    //         alert("비밀번호를 확인해주세요.");
+    //         f.userPasswordCheck.focus();
+    //         return false;
+    //
+    //     }
+    //
+    //     document.querySelector('select').value = '031';
+    //     document.querySelector('select').onchange();
+    // });
 
 
 </script>

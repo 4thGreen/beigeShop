@@ -25,6 +25,10 @@ public class UserDTO {
     private String mobileNumber3;
 
 
+    public UserDTO(String userId) {
+        this.userId = userId;
+    }
+
     public UserDTO(String phoneNumber1, String phoneNumber2, String phoneNumber3, String mobileNumber1, String mobileNumber2, String mobileNumber3) {
         this.phoneNumber1 = phoneNumber1;
         this.phoneNumber2 = phoneNumber2;

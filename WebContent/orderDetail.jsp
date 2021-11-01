@@ -293,7 +293,12 @@
                         <td><%=orderDetail.getProductNumber()%></td>
                         <td><%=orderDetail.getQuantity()%></td>
                         <td><%=dc.format(orderDetail.getPrice())%> KRW</td>
-                        <td><%=orderDetail.getStatus()%></td>
+                        <td>
+                            <%=orderDetail.getStatus()%><br>
+                            ( <a href="http://nplus.doortodoor.co.kr/web/detail.jsp?slipno=388591508100" onClick="window.open(this.href, '', 'width=700, height=700'); return false;">
+                                 388591508100</a>  )
+                        </td>
+
                     </tr>
                 </table>
 

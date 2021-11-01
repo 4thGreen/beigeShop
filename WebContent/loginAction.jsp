@@ -1,11 +1,6 @@
 <%@ page import="java.io.PrintWriter" %>
-<%@ page import="user.UserDAO" %><%--
-  Created by IntelliJ IDEA.
-  User: admins
-  Date: 2021-10-06
-  Time: 오전 9:29
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="user.UserDAO" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="user" class="user.UserDTO" scope="page"/>
 <jsp:setProperty name="user" property="userId"/>
@@ -16,12 +11,13 @@
     <title>Title</title>
 </head>
 <body>
+
 <%
     String userID = null;
-    if (session.getAttribute("userId") != null){
+    if (session.getAttribute("userId") != null) {
         userID = (String) session.getAttribute("userId");
     }
-    if (userID != null){
+    if (userID != null) {
         PrintWriter script = response.getWriter();
         script.println("<script>");
         script.println("alert('이미 로그인이 되어있습니다.)");

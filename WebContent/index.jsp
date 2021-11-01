@@ -13,6 +13,8 @@
 <body>
   <script>
     location.href = 'main.jsp';
+    // location.href = 'inputSearchTable.jsp';
+    // location.href = 'phoneCertification.jsp';
   </script>
 </body>
 </html>

@@ -6,6 +6,7 @@ public class CertifiedPhoneNumber {
 
     public String randomNumber(String number1){
 
+        // 랜덤값 4자리 생성
         Random rand  = new Random();
         String cerNum="";
 
