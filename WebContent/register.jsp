@@ -50,183 +50,39 @@
             }
         }
 
-        .navbar .justify-content-md-center {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .flex-shrink-0 .p-3 {
-
-        }
-
         .mun-formSP {
             font-family: 'Sunflower', sans-serif;
         }
 
         #modify {
             min-height: 100vh;
-
-            /*background: -webkit-gradient(linear, left bottom, right top, from(#92b5db), to(#1d466c));*/
-            /*background: -webkit-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);*/
-            /*background: -moz-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);*/
-            /*background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);*/
-            /*background: linear-gradient(to top right, #92b5db 0%, #1d466c 100%);*/
         }
 
         .input-form {
             max-width: 680px;
 
-            /*margin-top: 80px;*/
             padding: 32px;
 
             background: #fff;
-
-
-            /*-webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);*/
-            /*-moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);*/
-            /*box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)*/
         }
 
     </style>
 
-    <script type="text/javascript" src="script.js" charset="utf-8" ></script>
+    <script type="text/javascript" src="script.js" charset="utf-8"></script>
 </head>
 <body>
-<%
-    request.setCharacterEncoding("UTF-8");
-    String userID = null;
-    if (session.getAttribute("userID") != null) {
-        userID = (String) session.getAttribute("userID");
-    }
-%>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Tenth navbar example">
-    <div class="container-fluid">
 
-
-        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08"><h2>Beige</h2></a>
-
-
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample09">
-            <%
-                if (userID == null) {
-            %>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.jsp">LOGIN</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.jsp">ORDER</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.jsp">MY ACCOUNT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>
-                </li>
-            </ul>
-            <%
-            } else {
-            %>
-
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="logoutAction.jsp">LOGOUT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="order.jsp">ORDER</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="account.jsp">MY ACCOUNT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>
-                </li>
-            </ul>
-            <%
-                }
-            %>
-        </div>
-    </div>
-</nav>
+<%--     NAVI 구역     --%>
+<jsp:include page="navi.jsp"/>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
-            <!-- 사이드 바 메뉴-->
-            <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-                <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none">
-                    <svg class="bi me-2" width="30" height="70">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                </a>
-                <ul class="list-unstyled ps-0">
-                    <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#home-collapse" aria-expanded="false">
-                            OUTER
-                        </button>
-                        <div class="collapse " id="home-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark rounded">ZIP UP HOODIE</a></li>
-                                <li><a href="#" class="link-dark rounded">COAT</a></li>
-                                <li><a href="#" class="link-dark rounded">JACKET</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#dashboard-collapse" aria-expanded="false">
-                            PANTS
-                        </button>
-                        <div class="collapse" id="dashboard-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark rounded">SHORT PANTS</a></li>
-                                <li><a href="#" class="link-dark rounded">DENIM PANTS</a></li>
-                                <li><a href="#" class="link-dark rounded">JOGGER PANTS</a></li>
-                                <li><a href="#" class="link-dark rounded">SLACKS</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#orders-collapse" aria-expanded="false">
-                            SHOES
-                        </button>
-                        <div class="collapse" id="orders-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark rounded">SANDAL</a></li>
-                                <li><a href="#" class="link-dark rounded">SLIPPER</a></li>
-                                <li><a href="#" class="link-dark rounded">BOOTS</a></li>
-                                <li><a href="#" class="link-dark rounded">LOAFERS</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <%--                    <li class="border-top my-3"></li>--%>
-                    <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#account-collapse" aria-expanded="false">
-                            Account
-                        </button>
-                        <div class="collapse" id="account-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark rounded">New...</a></li>
-                                <li><a href="#" class="link-dark rounded">Profile</a></li>
-                                <li><a href="#" class="link-dark rounded">Settings</a></li>
-                                <li><a href="#" class="link-dark rounded">Sign out</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
-        <%--        사이드바끝    --%>
+
+        <%--        SIDEBAR 구역       --%>
+        <div class="col-md-2">
+            <jsp:include page="sidebar.jsp"/>
+        </div>
 
 
         <%
@@ -244,7 +100,7 @@
 
         %>
 
-
+        <%--        MAIN 구역         --%>
         <div class="col-md-7" id="title">
             <h4>Register</h4>
 
@@ -267,20 +123,19 @@
                                     <div class="check_font" id="checkId" name="checkId"></div>
 
 
-
                                     <script>
-                                        $("#userId").blur(function(){
+                                        $("#userId").blur(function () {
                                             var userId = $('#userId').val();
                                             var checkId = $('#checkId');
                                             $.ajax({
-                                                url : 'checkArticle.jsp',
-                                                type : 'get',
-                                                dataType : 'text',
-                                                data : {userId : userId},
-                                                success : function(data){
+                                                url: 'checkArticle.jsp',
+                                                type: 'get',
+                                                dataType: 'text',
+                                                data: {userId: userId},
+                                                success: function (data) {
                                                     console.log('성공');
                                                     console.log(data.trim());
-                                                    if (data == 1){
+                                                    if (data == 1) {
                                                         console.log('중복된 아이디');
                                                         checkId.text("중복된 아이디입니다.")
                                                     } else {
@@ -293,8 +148,6 @@
                                             })
                                         })
                                     </script>
-
-
 
 
                                 </div>
@@ -374,7 +227,8 @@
 
                                         <button type="button" id="sendPhoneNumber">인증번호받기</button>
 
-                                        <input type="text" id="inputCertificateNumber"  name="inputCertificateNumber" placeholder="인증번호입력">
+                                        <input type="text" id="inputCertificateNumber" name="inputCertificateNumber"
+                                               placeholder="인증번호입력">
                                         <button type="button" id="checkBtn" value="인증번호확인">인증번호확인</button>
 
 
@@ -397,8 +251,9 @@
 
                             <hr class="mb-4">
                             <div class="mb-4 d-grid gap-2 d-md-flex justify-content-md-end">
-                                <button class="btn btn-primary btn-sm btn-block"  id="editSubmit" type="button" onclick="register_check();"
-                                        >회원가입
+                                <button class="btn btn-primary btn-sm btn-block" id="editSubmit" type="button"
+                                        onclick="register_check();"
+                                >회원가입
                                 </button>
                             </div>
                         </form>

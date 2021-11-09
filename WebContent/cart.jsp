@@ -39,13 +39,6 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 
-    <!-- Favicons -->
-    <%--    <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">--%>
-    <%--    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">--%>
-    <%--    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">--%>
-    <%--    <link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">--%>
-    <%--    <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">--%>
-    <%--    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">--%>
     <meta name="theme-color" content="#7952b3">
 
 
@@ -56,44 +49,6 @@
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
-        }
-
-        .navbar .justify-content-md-center {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .flex-shrink-0 .p-3 {
-
-        }
-
-        #color, #color1, #color2, #color3 {
-            background-color: transparent;
-        }
-
-        .list-unstyled .collapse .btn-toggle-nav .link-dark {
-            background-color: transparent;
-            border-color: gray;
-        }
-
-        .collapse .navbar-nav .nav-item .nav-link {
-
-            -moz-transition: background, 0.5s;
-            -o-transition: background, 0.5s;
-            -webkit-transition: background, 0.5s;
-            transition: background, 0.5s;
-
-        }
-
-        .collapse .navbar-nav .nav-item .nav-link:hover {
-            color: rgba(150, 6, 6, 0.85);
-        }
-
-        #orderLists tr, #orderLists td {
-            border: 1px solid black;
-            text-align: center;
-            padding: 10px;
         }
 
         table, tr, tr td {
@@ -108,141 +63,19 @@
     <script type="text/javascript" src="script.js" charset="utf-8"></script>
 </head>
 <body>
-<%
-    String userID = null;
-    if (session.getAttribute("userID") != null) {
-        userID = (String) session.getAttribute("userID");
-    }
-%>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Tenth navbar example">
-    <div class="container-fluid">
 
-
-        <a class="navbar-brand justify-content-md-center" href="main.jsp" id="navbarsExample08"><h2>Beige</h2></a>
-
-
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample09">
-            <%
-                if (userID == null) {
-            %>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.jsp">LOGIN</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.jsp">ORDER</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.jsp">MY ACCOUNT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>
-                </li>
-            </ul>
-            <%
-            } else {
-            %>
-
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="logoutAction.jsp">LOGOUT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="order.jsp">ORDER</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="account.jsp">MY ACCOUNT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="cart.jsp">CART</a>
-                </li>
-            </ul>
-            <%
-                }
-            %>
-        </div>
-    </div>
-</nav>
-
-
+<%--     NAVI 구역     --%>
+<jsp:include page="navi.jsp"/>
 <div class="container-fluid">
     <div class="row">
+
+
+        <%--        SIDEBAR 구역       --%>
         <div class="col-md-2">
-            <!-- 사이드 바 메뉴-->
-            <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-                <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none">
-                    <svg class="bi me-2" width="30" height="70">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                </a>
-                <ul class="list-unstyled ps-0">
-                    <li class="mb-1">
-                        <button class="btn btn-light btn-toggle align-items-center rounded collapsed "
-                                data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false"
-                                id="color">
-                            OUTER
-                        </button>
-                        <div class="collapse" id="home-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark rounded">ZIP UP HOODIE</a></li>
-                                <li><a href="#" class="link-dark rounded">COAT</a></li>
-                                <li><a href="#" class="link-dark rounded">JACKET</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#dashboard-collapse" aria-expanded="false" id="color1">
-                            PANTS
-                        </button>
-                        <div class="collapse" id="dashboard-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark rounded">SHORT PANTS</a></li>
-                                <li><a href="#" class="link-dark rounded">DENIM PANTS</a></li>
-                                <li><a href="#" class="link-dark rounded">JOGGER PANTS</a></li>
-                                <li><a href="#" class="link-dark rounded">SLACKS</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#orders-collapse" aria-expanded="false" id="color2">
-                            SHOES
-                        </button>
-                        <div class="collapse" id="orders-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark rounded">SANDAL</a></li>
-                                <li><a href="#" class="link-dark rounded">SLIPPER</a></li>
-                                <li><a href="#" class="link-dark rounded">BOOTS</a></li>
-                                <li><a href="#" class="link-dark rounded">LOAFERS</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#account-collapse" aria-expanded="false" id="color3">
-                            Account
-                        </button>
-                        <div class="collapse" id="account-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark rounded">New...</a></li>
-                                <li><a href="#" class="link-dark rounded">Profile</a></li>
-                                <li><a href="#" class="link-dark rounded">Settings</a></li>
-                                <li><a href="#" class="link-dark rounded">Sign out</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <jsp:include page="sidebar.jsp"/>
         </div>
 
-        <%--        사이드바끝    --%>
-
+        <%--        MAIN 구역         --%>
         <div class="col-md-5" id="title">
             <h4>Shopping Cart</h4>
 
@@ -258,13 +91,13 @@
             %>
 
             <hr>
-                <%
-                    if (cartDTO.size() == 0) {
-                %>
-                쇼핑카트가 비어있습니다.
-                <%
-                } else {
-                %>
+            <%
+                if (cartDTO.size() == 0) {
+            %>
+            쇼핑카트가 비어있습니다.
+            <%
+            } else {
+            %>
             <table>
                 <tr>
                     <th>
@@ -374,15 +207,10 @@
                 <button type="submit" formaction="payment.jsp">결제하기</button>
             </form>
 
+            <%
+                }
+            %>
 
-                <%
-                    }
-                %>
-
-            <%--                <%=addressList.getExtraAddress()%>--%>
-            <%--                <%=addressList.getDetailAddress()%>--%>
-            <%--                <%=addressList.getAddress()%>--%>
-            <%--                <%=addressList.getPostcode()%>--%>
         </div>
 
     </div>
