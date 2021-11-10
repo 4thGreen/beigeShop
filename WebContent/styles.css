@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.no-stock-image {
+	filter: grayscale(100%);
+}
+
+#navbarsExample08, #navbarsExample09{
+  /*font-family: 'Anton', sans-serif;*/
+  font-family: 'Scheherazade New', serif;
+}
+
+#title{
+  font-family: 'Bree Serif', serif;
+  padding-top: 30px;
+}
+#tables{
+  font-family: 'Sunflower', sans-serif;
+}
+
+
+#title h4{
+  margin-bottom: 30px;
+}
+#title .btn-sm{
+  margin-left: 10px;
+  margin-bottom: 4px;
+  align-content: end;
+  font-family: 'Sunflower', sans-serif;
+}
+
+
+
+/* https://nurilab.github.io/2020/04/27/follow_me_footer/ */
