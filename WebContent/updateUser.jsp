@@ -53,7 +53,7 @@
         }
 
         #modify {
-            min-height: 100vh;
+            min-height: 50vh;
         }
 
         .input-form {
@@ -225,12 +225,10 @@
                         </form>
                     </div>
                 </div>
-                <footer class="my-3 text-center text-small">
-                    <p class="mb-1">&copy; 2021 Beige</p>
-                </footer>
             </div>
 
         </div>
+            <jsp:include page="footer.jsp"/>
     </div>
 </div>
 <script type="text/javascript">

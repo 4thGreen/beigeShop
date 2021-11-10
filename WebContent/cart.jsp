@@ -212,7 +212,7 @@
             %>
 
         </div>
-
+            <jsp:include page="footer.jsp"/>
     </div>
 </div>
 <script type="text/javascript">

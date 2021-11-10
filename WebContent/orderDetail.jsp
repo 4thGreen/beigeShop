@@ -61,7 +61,8 @@
     </style>
 
 
-</head>ㅣ
+</head>
+ㅣ
 <body>
 <%--     NAVI 구역     --%>
 <jsp:include page="navi.jsp"/>
@@ -173,9 +174,8 @@
                     </tr>
                 </table>
             </div>
-
-
         </div>
+        <jsp:include page="footer.jsp"/>
     </div>
 </div>
 

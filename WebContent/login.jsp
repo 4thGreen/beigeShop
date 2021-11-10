@@ -116,9 +116,7 @@
             </div>
 
         </div>
-        <footer class="my-3 text-center text-small">
-            <p class="mb-1">&copy; 2021 Beige</p>
-        </footer>
+            <jsp:include page="footer.jsp"/>
     </div>
 </div>
 <script type="text/javascript">

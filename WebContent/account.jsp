@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,17 +12,18 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-static/">
 
 
-
     <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
 
     <%--    font    --%>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Sunflower:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Sunflower:wght@300&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"/>
     <link href="sidebars.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
@@ -36,7 +37,6 @@
     <style>
 
 
-
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -44,8 +44,6 @@
         }
 
     </style>
-
-
 
 
 </head>
@@ -57,12 +55,12 @@
 <div class="container-fluid">
     <div class="row">
 
-<%--        SIDEBAR 구역       --%>
+        <%--        SIDEBAR 구역       --%>
         <div class="col-md-2">
             <jsp:include page="sidebar.jsp"/>
         </div>
 
-<%--        MAIN 구역         --%>
+        <%--        MAIN 구역         --%>
         <div class="col-md-5" id="title">
             <h4>My Account</h4>
             <div>
@@ -70,12 +68,15 @@
             </div>
 
         </div>
+        <jsp:include page="footer.jsp"/>
     </div>
 </div>
 <script type="text/javascript">
 
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
 <script src="./js/sidebars.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 </body>
