@@ -1,11 +1,9 @@
 body {
-  height: 100%;
   min-height: 100vh;
   min-height: -webkit-fill-available;
 }
 
 html {
-  height: 100%;
   height: -webkit-fill-available;
 }
 
@@ -53,7 +51,9 @@ main {
 .btn-toggle:hover,
 .btn-toggle:focus {
   color: rgba(0, 0, 0, .85);
-  background-color: #d2f4ea;
+  /*background-color: #d2f4ea;*/
+  background-color: transparent;
+
 }
 
 .btn-toggle::before {
@@ -80,7 +80,9 @@ main {
 }
 .btn-toggle-nav a:hover,
 .btn-toggle-nav a:focus {
-  background-color: #d2f4ea;
+  /*background-color: #d2f4ea;*/
+  background-color: transparent;
+
 }
 
 .scrollarea {
