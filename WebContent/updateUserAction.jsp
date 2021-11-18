@@ -1,3 +1,4 @@
+<% request.setCharacterEncoding("UTF-8"); %>
 <%@ page import="user.UserDAO" %>
 <%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
@@ -34,7 +35,6 @@
 </head>
 <body>
 <%
-    request.setCharacterEncoding("UTF-8");
     UserDAO userDAO = new UserDAO();
     int result = userDAO.updateMember(user);
     if (result == 1){

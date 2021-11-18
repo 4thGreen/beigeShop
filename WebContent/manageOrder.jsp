@@ -1,3 +1,4 @@
+<%@page import="user.UserDTO"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.io.File"%>
 <%@page import="product.ProductDTO"%>
@@ -138,6 +139,21 @@
   					<td colspan="2"><%= orderDTO.getOrderDate() %></td>
   				</tr>
   				<tr><td colspan="5"></td></tr>
+ 				<%
+ 					UserDTO orderUser = userDAO.view(orderDTO.getM_id());
+ 				%>
+  				<tr align="center">
+  					<th>주문자명</th>
+  					<td colspan="4"><%= orderUser.getUserName() %></td>
+  				</tr>
+  				<tr align="center">
+  					<th>연락처</th>
+  					<td colspan="4"><%= orderUser.getMobileNumber() %></td>
+  				</tr>
+  				<tr align="center">
+  					<th>주소</th>
+  					<td colspan="4"><%= orderUser.getUserAddress().replace("/", " ") %></td>
+  				</tr>
   				<tr align="center">
   					<th>배송 요청 사항</th>
   					<%

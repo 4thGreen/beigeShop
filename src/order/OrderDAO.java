@@ -142,6 +142,7 @@ public class OrderDAO {
                 String type = rs.getString("o_type");
                 String productName = rs.getString("s_name");
                 orderDTO = new OrderDTO(orderNo, productNo, quantity, price, orderDate, status, request, tracking, type, productName);
+                orderDTO.setM_id(id);
                 orderDTO.setO_ids(rs.getString("s_ids"));
                 orderDTO.setO_qtys(rs.getString("o_quantities"));
 //                orderDTOList.add(orderDTO);

@@ -1,3 +1,4 @@
+<% request.setCharacterEncoding("UTF-8"); %>
 <%@ page import="user.UserDAO" %>
 <%@ page import="user.UserDTO" %>
 <%@ page import="java.io.PrintWriter" %><%--
@@ -24,8 +25,6 @@
 </head>
 <body>
 <%
-
-    request.setCharacterEncoding("UTF-8");
     UserDAO userDAO = new UserDAO();
     System.out.println("user.getUserAddress() = " + user.getUserAddress());
     System.out.println("user.getMobileNumber() = " + user.getMobileNumber());
