@@ -1,6 +1,6 @@
 ## Environment
-EnvBeige.class
-EnvBeige.java
+build/classes/util/EnvBeige.class
+src/util/EnvBeige.java
 
 ### Eclipse ###
 .metadata
