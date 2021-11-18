@@ -3,6 +3,8 @@ package user;
 import net.nurigo.java_sdk.Coolsms;
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
+import util.EnvBeige;
+
 import org.json.simple.JSONObject;
 
 import java.util.HashMap;
@@ -11,8 +13,8 @@ import java.util.HashMap;
 public class RequestMessage {
 
         public void sendMessage(String phoneNumber1, String cerNum){
-            String api_key = "NCSD9NBCHFPKIR1L";
-            String api_secret = "TKUARVJMU05JJTRQV92WYFPKRML0MKWJ";
+            String api_key = EnvBeige.coolsmsApiKey;
+            String api_secret = EnvBeige.coolsmsApiSecret;
             Message coolsms = new Message(api_key, api_secret);
 
             // 4 params(to, from, type, text) are mandatory. must be filled
@@ -21,7 +23,7 @@ public class RequestMessage {
             //수신번호
             params.put("to", phoneNumber1);
             //발신번호
-            params.put("from", "01029541712");
+            params.put("from", EnvBeige.coolsmsNumber);
             params.put("type", "SMS");
             //문자내용
             params.put("text", "인증번호는 "+cerNum+"입니다.");

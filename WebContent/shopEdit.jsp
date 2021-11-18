@@ -1,3 +1,4 @@
+<%@page import="java.io.File"%>
 <%@page import="product.ProductDTO"%>
 <%@page import="product.ProductDAO"%>
 <%@ page import="user.UserDAO" %>
@@ -72,11 +73,8 @@
         <div class="col-md-8" id="title">
     <%
     	String pageNum = request.getParameter("pageNum");
-    	if (pageNum == null) {
-    		pageNum = "1";
-    	}
        	int s_id=0;
-       	String s_name="";
+       	String s_name = "";
        	if(request.getParameter("s_id") != null){
    	    	s_id = Integer.parseInt(request.getParameter("s_id"));
        	}
@@ -84,36 +82,32 @@
        	ProductDAO db = ProductDAO.getInstance();
        	ProductDTO product = db.getProduct(s_id);
        	
-       	if(product!= null){
-       		s_name = product.getS_name();
-       	}
-       	
        	UserDAO userDAO = new UserDAO();
        	boolean isAdmin = userDAO.isAdmin(userID);
        	
-       	if (!isAdmin) {
+       	if (!isAdmin || s_id == 0 || product == null) {
     		%><script>
     			alert("잘못된 접근입니다.");
-    			location.href = "shopList.jsp";
+    			location.href = "main.jsp";
     		</script><%
     	}
     %>
 	<script type="text/javascript" src="shop.js" charset="utf-8"></script>
-	<h4>NEW ITEM</h4>
-		<form name="form" method="post" action="shopWrite_ok.jsp" enctype="multipart/form-data">
+	<h4>EDIT ITEM</h4>
+		<form name="shopEditForm" method="post" action="shopEdit_ok.jsp" enctype="multipart/form-data">
 			<input type="hidden" name="s_id" value="<%= s_id %>">
 			
 			<table class="table">
 			<tr>
 				<th width="30%">상품명</th>
 				<td>
-					<input type="text" name="s_name" size="30">
+					<input type="text" name="s_name" size="30" value="<%= product.getS_name() %>">
 				</td>
 			</tr>
 			<tr>
 				<th width="30%">사이즈</th>
 				<td>
-					<select name="s_size" size="1">
+					<select id="s_size" name="s_size" size="1">
 						<option value="s">S
 						<option value="m">M
 						<option value="l">L
@@ -124,7 +118,7 @@
 			<tr>
 				<th width="30%">상품분류</th>
 				<td>
-					<select name="s_category" size="1">
+					<select id="s_category" name="s_category" size="1">
 						<option value="zipuphoodie">ZIP UP HOODIE
 						<option value="coat">COAT
 						<option value="jacket">JACKET
@@ -142,33 +136,39 @@
 			<tr>
 				<th width="30%">판매가</th>
 				<td>
-					<input type="number" name="s_price" size="10">
+					<input type="number" name="s_price" size="10" value="<%= product.getS_price() %>">
 				</td>
 			</tr>
 			<tr>
 				<th width="30%">재고량</th>
 				<td>
-					<input type="number" name="s_stock" size="10">
+					<input type="number" name="s_stock" size="10" value="<%= product.getS_stock() %>">
 				</td>
 			</tr>
-		
+			
 			<tr>
 				<th width="30%">대표이미지</th>
+				<td>
+					<img src="<%= request.getContextPath() %><%= File.separator %>upload<%= File.separator %><%= product.getS_image() %>" height="100" width="100">
+				</td> 
+			</tr>
+			<tr>
+				<th width="30%">대표이미지 수정</th>
 				<td>
 					<input class="btn btn-light" type="file" name="s_image" size="30">
 				</td> 
 			</tr>
 			<tr>	
-				<th width="30%">상세이미지</th>
+				<th width="30%">상세이미지 수정</th>
 				<td>
 					<input class="btn btn-light" type="file" name="s_image2" size="30">
 				</td> 
 			</tr>	
 			<tr height="50" align="center">
 				<td colspan="4" >
-					<input class="btn btn-secondary" type="button" value="상품등록" onclick="check_ok()">&nbsp;
+					<input class="btn btn-secondary" type="button" value="상품수정" onclick="check_edit()">&nbsp;
 					<input class="btn btn-secondary" type="reset" value="다시작성">&nbsp;
-					<input class="btn btn-secondary" type="button" value="상품목록" onclick="location.href='shopList.jsp?pageNum=<%=pageNum%>'">&nbsp;
+					<input class="btn btn-secondary" type="button" value="상품목록" onclick="location.href='manageShop.jsp'">&nbsp;
 				</td>
 			</tr>
 			</table>
@@ -177,6 +177,12 @@
         <jsp:include page="footer.jsp"/>
     </div>
 </div>
+<script>
+	$(function() {
+		$('#s_size').val('<%= product.getS_size() %>').prop("selected",true);
+		$('#s_category').val('<%= product.getS_category() %>').prop("selected",true);
+	});
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>

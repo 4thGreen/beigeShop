@@ -1,3 +1,7 @@
+<%@page import="product.ProductDTO"%>
+<%@page import="product.ProductDAO"%>
+<%@page import="org.json.simple.JSONArray"%>
+<%@page import="org.json.simple.parser.JSONParser"%>
 <%@ page import="order.OrderDAO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="order.OrderDTO" %>
@@ -76,7 +80,14 @@
 
         <%
             OrderDAO orderDAO = new OrderDAO();
-            OrderDTO orderDetail =  orderDAO.orderDetailView(Long.parseLong(request.getParameter("orderNumber")));
+            OrderDTO orderDetail = orderDAO.orderDetailView(request.getParameter("orderNumber"));
+            
+            if (userID == null || orderDetail == null) {
+            	%><script>
+	    			alert("잘못된 접근입니다.");
+	    			location.href = "main.jsp";
+    			</script><%
+            }
             UserDAO userDAO = new UserDAO();
             UserDTO userDTO =  userDAO.view((String) session.getAttribute("userID"));
             System.out.println("(String)session.getAttribute(\"userID\") = " + session.getAttribute("userID"));
@@ -102,6 +113,19 @@
                         <td>주문처리상태</td>
                         <td><%=orderDetail.getStatus()%></td>
                     </tr>
+                    <tr>
+                    	<td>배송정보</td>
+                    	<td>
+	                    	<% if (orderDetail.getTracking() != -1 ) { %>
+	                    		<%= orderDetail.getType() %>
+	                    		<a href="http://nplus.doortodoor.co.kr/web/detail.jsp?slipno=<%= orderDetail.getTracking() %>" onClick="window.open(this.href, '', 'width=700, height=700'); return false;">
+									 <%= orderDetail.getTracking() %>
+								</a>
+	                    	<% } else { %>
+	                    		배송준비중
+	                    	<% } %>
+						</td>
+                    </tr>
                 </table>
 
                 <table class="table">
@@ -114,23 +138,27 @@
 
                 <table class="table">
                 	<tr><td colspan="4"><b>주문 상품 정보</b></td></tr>
-                    <tr>
+               		<tr>
                         <td>상품정보</td>
                         <td>수량</td>
                         <td>판매가</td>
-                        <td>주문처리상태</td>
                     </tr>
-                    <tr>
-                        <td><a href="shopShow.jsp?s_id=<%= orderDetail.getProductNumber() %>"><%=orderDetail.getProductName()%></a></td>
-                        <td><%=orderDetail.getQuantity()%></td>
-                        <td><%=dc.format(orderDetail.getPrice())%> KRW</td>
-                        <td>
-                            <%=orderDetail.getStatus()%><br>
-                            ( <a href="http://nplus.doortodoor.co.kr/web/detail.jsp?slipno=388591508100" onClick="window.open(this.href, '', 'width=700, height=700'); return false;">
-                                 388591508100</a>  )
-                        </td>
-
-                    </tr>
+                	<%
+                	JSONParser parser = new JSONParser();
+                	JSONArray items = (JSONArray) parser.parse(orderDetail.getO_ids());
+                	JSONArray itemQTY = (JSONArray) parser.parse(orderDetail.getO_qtys());
+                	for (int i = 0 ; i < items.size(); i ++) {
+                		ProductDAO productDAO = ProductDAO.getInstance();
+                		ProductDTO productDTO = productDAO.getProduct(Integer.parseInt(items.get(i).toString()));
+	                	%>
+	                    <tr>
+	                        <td><a href="shopShow.jsp?s_id=<%= productDTO.getS_id() %>"><%= productDTO.getS_name() %></a></td>
+	                        <td><%= itemQTY.get(i) %></td>
+	                        <td><%= dc.format(productDTO.getS_price()) %> KRW</td>
+	                    </tr>
+	                    <%
+                	}
+                    %>
                 </table>
 
                 <table class="table">

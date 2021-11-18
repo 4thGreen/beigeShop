@@ -111,9 +111,23 @@ function update_check(){
     } else {
         alert("비밀번호를 확인해주세요.");
         f.userPasswordCheck.focus();
-        return false;
-
     }
+}
+
+function delete_check() {
+	if(confirm("정말 탈퇴하시겠습니까?")) {
+		document.deleteForm.submit();
+	} else {
+		location.href = "updateUser.jsp";
+	}
+}
+
+function delete_check_admin(qID) {
+	if(confirm("정말 탈퇴 처리하시겠습니까?")) {
+		location.href = "deleteMember.jsp?delete_mID=" + qID;
+	} else {
+		location.reload();
+	}
 }
 
 

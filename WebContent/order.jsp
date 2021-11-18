@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@ page import="order.OrderDAO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="order.OrderDTO" %>
@@ -113,6 +114,8 @@
                     String requestEndDate = request.getParameter("endDate");
                     List<OrderDTO> orderDTOList;
                     OrderDAO orderDAO = new OrderDAO();
+                    
+                    DecimalFormat dc = new DecimalFormat("###,###,###");
 
                     System.out.println("requestStartDate = " + requestStartDate);
                     System.out.println("requestEndDate = " + requestEndDate);
@@ -129,35 +132,44 @@
                         <tr>
                             <td>주문번호</td>
                             <td>주문일자</td>
-                            <td>상품명</td>
-                            <td>수량</td>
+                            <td>주문명</td>
+                            <!-- <td>수량</td> -->
                             <td>가격</td>
                             <td>주문처리상태</td>
                         </tr>
                         </thead>
                         <tbody>
                         <%
-                            for (int i = 0; i < orderDTOList.size(); i++) {
+                        	if (orderDTOList.size() == 0) {
+                        		%>
+                    		<tr align="center">
+                    			<td colspan="5">주문 내역이 없습니다.</td>
+                    		</tr>
+                        		<%
+                        	} else {
+
+                            	for (int i = 0; i < orderDTOList.size(); i++) {
 
                         %>
-                        <tr>
-                            <td>
-                                <a href="orderDetail.jsp?orderNumber=<%=orderDTOList.get(i).getOrderNumber()%>"><%=orderDTOList.get(i).getOrderNumber()%>
-                            </td>
-                            <td><%=orderDTOList.get(i).getOrderDate()%>
-                            </td>
-                            <td>
-                            	<a href="shopShow.jsp?s_id=<%= orderDTOList.get(i).getProductNumber() %>"><%=orderDTOList.get(i).getProductName()%></a>
-                            </td>
-                            <td><%=orderDTOList.get(i).getQuantity()%>
-                            </td>
-                            <td><%=orderDTOList.get(i).getPrice()%>
-                            </td>
-                            <td><%=orderDTOList.get(i).getStatus()%>
-                            </td>
-                        </tr>
+	                        <tr>
+	                            <td>
+	                                <a href="orderDetail.jsp?orderNumber=<%=orderDTOList.get(i).getOrderNumber()%>"><%=orderDTOList.get(i).getOrderNumber()%>
+	                            </td>
+	                            <td><%=orderDTOList.get(i).getOrderDate()%>
+	                            </td>
+	                            <td>
+	                            	<a href="shopShow.jsp?s_id=<%= orderDTOList.get(i).getProductNumber() %>"><%=orderDTOList.get(i).getProductName()%></a>
+	                            </td>
+	                            <%-- <td><%=orderDTOList.get(i).getQuantity()%> --%>
+	                            </td>
+	                            <td align="right"><%= dc.format(orderDTOList.get(i).getPrice()) %>
+	                            </td>
+	                            <td><%=orderDTOList.get(i).getStatus()%>
+	                            </td>
+	                        </tr>
                         <%
-                            }
+                           		}
+                        	}
                         %>
                         </tbody>
                     </table>

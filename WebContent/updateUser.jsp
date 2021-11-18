@@ -245,6 +245,8 @@
 
                             <hr class="mb-4">
                             <div class="mb-4 d-grid gap-2 d-md-flex justify-content-md-end">
+                            	<input type="button" class="btn btn-primary btn-sm btn-block"
+                                        onClick="location.href='delete.jsp'" value="회원 탈퇴">
                                 <button class="btn btn-primary btn-sm btn-block" type="submit" id="updateSubmit"
                                         onclick="update_check();"
                                         >수정 완료
@@ -354,6 +356,7 @@
 
 
 </script>
+<script type="text/javascript" src="script.js" charset="utf-8"></script>
         </div>
         <jsp:include page="footer.jsp"/>
     </div>

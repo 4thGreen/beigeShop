@@ -1,8 +1,11 @@
 <%@page import="java.text.DecimalFormat"%>
-<%@page import="java.io.File"%>
 <%@page import="product.ProductDTO"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="product.ProductDAO"%>
+<%@page import="org.json.simple.JSONArray"%>
+<%@page import="org.json.simple.parser.JSONParser"%>
+<%@page import="order.OrderDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="order.OrderDAO"%>
 <%@ page import="user.UserDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
@@ -73,84 +76,95 @@
 
         <%--        MAIN 구역         --%>
         <div class="col-md-8" id="title">
-	<%
-		request.setCharacterEncoding("UTF-8");
-			String pageNum = request.getParameter("pageNum");
-			
-			if(pageNum == null){
-		pageNum ="1";
-			}
-		ProductDAO db = ProductDAO.getInstance();
-		String searchText = request.getParameter("search");
-		ArrayList<ProductDTO> productlist = db.getSearch(searchText);
-		
-		DecimalFormat format = new DecimalFormat("###,###,###");
-
-		int s_id=0,s_price=0,s_stock=0;
-		String s_name, s_size, s_category, s_image;
-	%>
-		<h4>SEARCH: <%= searchText %></h4>
-
-				<table class="table">
-				<tr>
-					<td align="right">
-						<input type="button"
-							value="전체 목록" onClick="location.href='shopList.jsp?pageNum=<%=pageNum%>'"
-							style="cursor: pointer;"
-							class="btn btn-secondary">
-					</td>
-				</tr>
-			</table>
-			<table class="table">	
-				<tr height="25">
-					<td width="80" align="center">품목</td>
-					<td width="80" align="center">이미지</td>
-					<td width="450" align="center">상품</td>
-					<td width="120" align="center">사이즈</td>
-					<td width="130" align="center">가격</td>
-					<td width="60" align="center">재고</td>
-				</tr>
+   			<h4>Orders</h4>
+<%
+	UserDAO userDAO = null;
+	boolean isAdmin = false;
+	if (userID == null) {
+		%><script>
+		alert("잘못된 접근입니다.");
+		location.href = "main.jsp";
+		</script><%	
+	} else {
+		userDAO = new UserDAO();
+		isAdmin = userDAO.isAdmin(userID);
+	}
+	
+	if (!isAdmin) {
+		%><script>
+			alert("잘못된 접근입니다.");
+			location.href = "main.jsp";
+		</script><%
+	} else {
+%>
+   			<table class="table">
+   				<thead>
+   					<tr align="center">
+   						<th>주문번호</th>
+   						<th>주문일자</th>
+   						<th>아이디</th>
+   						<th>주문상품</th>
+   						<th>가격</th>
+   						<th>상태</th>
+   						<th>관리</th>
+   					</tr>
+   				</thead>
+   				<tbody>
+				<%
+				OrderDAO orderDAO = new OrderDAO();
+				ArrayList<OrderDTO> orders = orderDAO.viewOrders();
+				DecimalFormat dc = new DecimalFormat("###,###,###");
 				
-				<%
-							if (productlist.size() == 0) {
-								%>
-								<tr>
-									<td colspan="6" align="center">검색 결과가 없습니다. ㅠㅠ</td>
-								</tr>
-								<%
-							} else {
-									for(int i = 0; i<productlist.size(); i++){
-										
-										ProductDTO product = productlist.get(i);
-										s_id=product.getS_id();
-										s_category=product.getS_category();
-										s_name=product.getS_name();
-										s_size=product.getS_size();
-										s_price=product.getS_price();
-										s_stock=product.getS_stock();
-										s_image=product.getS_image();
-								%>
-					<tr height="25" bgcolor="#ffffff" 
-									onmouseover="this.style.backgroundColor='#eeeeef'"
-									onmouseout="this.style.backgroundColor='#ffffff'"
-									onClick="location.href='shopShow.jsp?s_id=<%=s_id%>'"
-									style="cursor:pointer;">
-						<td align="center"><%=s_category%></td>
-						<td><img src="<%= request.getContextPath() %><%= File.separator %>upload<%= File.separator %><%= s_image %>" height="200" width="200"></td>
-						<td align="center"><%=s_name%></td>
-						<td align="center"><%=s_size%></td>
-						<td align="center"><%=format.format(s_price)%></td>
-						<td align="center">&nbsp;<%=s_stock%>&nbsp;</td>
-					</tr>	
-				<%
-								}
-							}
+				if (orders.size() == 0) {
 					%>
-			</table>
-	    <center>
-	   		 <%=ProductDTO.pageNumber(4, "shopSearch.jsp")%>
-		</center>	
-        </div>
+					<tr align="center">
+						<td colspan="7">주문 내역이 없습니다. ㅠㅠ</td>
+					</tr>
+					<%
+				} else {
+					for (OrderDTO order : orders) {
+						boolean needCheck = order.getStatus().equals("결제 완료");
+						
+						if (needCheck) {
+					%><tr align="center" bgcolor="#ffcccc"><%
+						} else {
+					%><tr align="center"><%		
+						}
+					%>
+   						<td><%= order.getOrderNumber() %></td>
+   						<td><%= order.getOrderDate() %></td>
+   						<td><%= order.getM_id() %></td>
+   						<td>
+   						<%
+   						JSONParser parser = new JSONParser();
+   	                	JSONArray items = (JSONArray) parser.parse(order.getO_ids());
+   	                	JSONArray itemQTY = (JSONArray) parser.parse(order.getO_qtys());
+   	                	for (int i = 0 ; i < items.size(); i ++) {
+   	                		ProductDAO productDAO = ProductDAO.getInstance();
+   	                		ProductDTO productDTO = productDAO.getProduct(Integer.parseInt(items.get(i).toString()));
+   		                	%>
+   		                    <a href="shopShow.jsp?s_id=<%= productDTO.getS_id() %>"><%= productDTO.getS_name() %></a>: <%= itemQTY.get(i) %>개
+   		                    <%
+   		                    if (i < items.size() - 1) {
+   		                    	out.print("<br>");
+   		                    }
+   	                	}
+   						%>
+   						</td>
+   						<td><%= dc.format(order.getPrice()) %></td>
+   						<td><%= order.getStatus() %></td>
+   						<td><input type="button" class="btn btn-dark btn-sm" onClick="location.href='manageOrder.jsp?o_id=<%= order.getOrderNumber()%>'" value="관리"></td>
+   					</tr>
+   				<%
+					}
+   				} 
+   				%>
+   				</tbody>
+   			</table>
+<%
+	}
+%>
+		</div>
         <jsp:include page="footer.jsp"/>
     </div>
 </div>

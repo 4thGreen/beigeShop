@@ -23,6 +23,8 @@ public class UserDTO {
     private String mobileNumber1;
     private String mobileNumber2;
     private String mobileNumber3;
+    
+    private int userPurchase;
 
 
     public UserDTO(String userId) {
@@ -188,4 +190,12 @@ public class UserDTO {
     public void setUserSingUp(String userSingUp) {
         this.userSingUp = userSingUp;
     }
+
+	public int getUserPurchase() {
+		return userPurchase;
+	}
+
+	public void setUserPurchase(int userPurchase) {
+		this.userPurchase = userPurchase;
+	}
 }

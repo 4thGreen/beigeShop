@@ -1,3 +1,4 @@
+<%@page import="util.EnvBeige"%>
 <%@page import="java.io.File"%>
 <%@ page import="user.UserDTO" %>
 <%@ page import="user.UserDAO" %>
@@ -75,7 +76,6 @@
 
         <%--        MAIN 구역         --%>
         <div class="col-md-8" id="title">
-        <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
             <h4>Shopping Cart</h4>
 
             <%--            <%=request.getParameter("date")%>--%>
@@ -104,7 +104,6 @@
 
                 CartDAO cartDAO = new CartDAO();
                 List<CartDTO> cartDTO = cartDAO.viewCart(userId);
-
 
             %>
 
@@ -149,7 +148,8 @@
                         <label class="form-check-label check" for="checkBox<%=i%>" name="check">
                         </label>
                     </td>
-                    <td class="paymentName">
+                    <td>
+                    	<input type="hidden" class="paymentName" value="<%= shopDTO.getShopId() %>">
                         <a href="shopShow.jsp?s_id=<%= shopDTO.getShopId() %>"><%=shopDTO.getShopName()%></a>
                     </td>
                     <td><img src="<%= request.getContextPath() %><%= File.separator %>upload<%= File.separator %><%= shopDTO.getShopImage() %>" height="50" width="50"></td>
@@ -225,7 +225,6 @@
                 <button id="goPayment" type="button" class="btn btn-secondary">결제 하기</button>
             <%-- </form>  --%>
 
-
                 <%
                     }
                 %>
@@ -250,7 +249,7 @@
 			System.out.println("payment: " + orderName);
 		%>
 		var IMP = window.IMP; // 생략가능
-		IMP.init('imp70228570'); //가맹점 식별코드를 ''안에 기입
+		IMP.init('<%= EnvBeige.iamportKey %>'); //가맹점 식별코드를 ''안에 기입
 		// 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
 		// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
 		IMP.request_pay({
@@ -274,7 +273,7 @@
 		'vbank':가상계좌,
 		'phone':휴대폰소액결제
 		*/
-		merchant_uid: 'merchant_' + new Date().getTime(),
+		merchant_uid: 'b_' + new Date().getTime() + '00' + Math.floor(Math.random() * 100),
 		/*
 		merchant_uid에 경우
 		https://docs.iamport.kr/implementation/payment
@@ -299,13 +298,41 @@
 		}, function (rsp) {
 			console.log(rsp);
 			if (rsp.success) {
-				alert("결제가 완료되었습니다.");
+				var orderMsg = prompt("결제가 완료되었습니다.\n배송 요청사항을 남겨주세요.");
+				var orderItems = [];
+				var orderAmounts = [];
+                $(".paymentName").each(function () {
+                	orderItems.push($.trim($(this).val()));
+                })
+                $(".paymentAmount").each(function () {
+                	orderAmounts.push($.trim($(this).text()));
+                })
+				$.ajax({
+		            url: "cartOK.jsp",
+		            method: "POST",
+		            //headers: { "Content-Type": "application/json" },
+		            dataType: "text",
+		            data: {
+		                imp_uid: rsp.imp_uid,					// 고유ID
+		                merchant_uid: rsp.merchant_uid,			// 상점 거래ID
+		                paid_amount: $('#totalPrice').val(),	// 결제 금액 rsp.paid_amount
+		                apply_num: rsp.apply_num,				// 카드 승인번호
+		                orderMsg: orderMsg,
+		                items: JSON.stringify(orderItems),
+		                itmQTY: JSON.stringify(orderAmounts)
+		            },
+                    success: function (result) {
+                        location.href = "orderDetail.jsp?orderNumber=" + rsp.merchant_uid;
+                        console.log(result);
+                    }
+				});
 			} else {
 				alert("결제에 실패하였습니다.\n" + rsp.error_msg);
 			}
 		});
 	}); 
 </script>
+<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
         </div>
         <jsp:include page="footer.jsp"/>
     </div>

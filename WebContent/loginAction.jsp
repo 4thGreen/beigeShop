@@ -52,6 +52,12 @@
         script.println("alert('데이터베이스 오류가 발생했습니다.')");
         script.println("history.back()");
         script.println("</script>");
+    } else if (result == -9) {
+    	PrintWriter script = response.getWriter();
+        script.println("<script>");
+        script.println("alert('탈퇴하여 이용할 수 없는 아이디입니다.')");
+        script.println("history.back()");
+        script.println("</script>");
     }
 
 %>

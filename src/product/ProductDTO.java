@@ -15,27 +15,27 @@ public class ProductDTO {
 	public static int pageCount = 1;  // 페이지 개수
 	public static int pageNum = 1; //각 페이지 번호
 	
-	public static String pageNumber(int limit) {
+	public static String pageNumber(int limit, String page) {
 		String str ="";
 		int temp =(pageNum - 1) % limit;//임시 시작페이지
 		int startPage = pageNum - temp;//시작페이지
 		
 		if((startPage - limit) > 0) {
-			str = "<a href ='list.jsp?pageNum="+(startPage-1)+"'>[이전]</a>&nbsp;&nbsp;";
+			str = "<a href ='" + page + "?pageNum="+(startPage-1)+"'>[이전]</a>&nbsp;&nbsp;";
 		}//이전 출력
 		
 		for (int i = startPage; i < (startPage+limit); i++) {
 			if (i == pageNum) {
 				str += "["+i+"]&nbsp;&nbsp;";
 			}else {
-				str += "<a href='list.jsp?pageNum="+i+"'>["+i+"]</a>&nbsp;&nbsp;";
+				str += "<a href='" + page + "?pageNum="+i+"'>["+i+"]</a>&nbsp;&nbsp;";
 			}
 			if (i >= pageCount) {
 				break;
 			}
 		}
 		if((startPage + limit) <= pageCount) {
-			str += "<a href ='list.jsp?pageNum="+(startPage+limit)+"'>[다음]</a>&nbsp;&nbsp;";
+			str += "<a href ='" + page + "?pageNum="+(startPage+limit)+"'>[다음]</a>&nbsp;&nbsp;";
 		}//다음 출력
 		return str;
 	}

@@ -76,12 +76,12 @@
 	}
 %>
         <div class="col-md-8" id="title">
-            <h4>My Account</h4>
+            <h4>Admin</h4>
             <div class="list-group" style="max-width: 500px">
                 <a href="updateUser.jsp" class="list-group-item list-group-item-action">내 정보수정</a>
-            	<a href="#" class="list-group-item list-group-item-action">회원 관리</a>
-            	<a href="#" class="list-group-item list-group-item-action">배송 관리</a>
-            	<a href="#" class="list-group-item list-group-item-action">상품 관리</a>
+            	<a href="manageMember.jsp" class="list-group-item list-group-item-action">회원 관리</a>
+            	<a href="manageOrders.jsp" class="list-group-item list-group-item-action">배송 관리</a>
+            	<a href="manageShop.jsp" class="list-group-item list-group-item-action">상품 관리</a>
             	<a href="shopWrite.jsp" class="list-group-item list-group-item-action">상품 등록</a>
 			</div>
         </div>

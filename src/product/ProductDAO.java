@@ -109,6 +109,8 @@ public class ProductDAO {
 			e.printStackTrace();
 		} finally {
 			try {
+				if (rs != null)
+					rs.close();
 				if (pstmt != null)
 					pstmt.close();
 				if (conn != null)
@@ -163,7 +165,8 @@ public class ProductDAO {
 			}
 
 //			stmt = conn.createStatement();
-			sql = "select * from beige_shop" + (category != null ? " where s_category = '" + category + "'" : "");
+			sql = "select * from beige_shop" + (category != null ? " where s_category = '" + category + "'" : "")
+					+ " ORDER BY s_id DESC";
 			rs = stmt.executeQuery(sql);
 
 			if (rs.next()) {
@@ -197,12 +200,12 @@ public class ProductDAO {
 			e.printStackTrace();
 		} finally {
 			try {
+				if (rs != null)
+					rs.close();
 				if (stmt != null)
 					stmt.close();
 				if (conn != null)
 					conn.close();
-				if (rs != null)
-					rs.close();
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
@@ -286,9 +289,88 @@ public class ProductDAO {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 
 		return list;
+	}
+
+	public int deleteProduct(String productID) {
+		int isDelete = -1;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement("DELETE FROM beige_shop WHERE s_id = ?");
+			pstmt.setString(1, productID);
+
+			isDelete = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+		return isDelete;
+	}
+
+	public int updateProduct(ProductDTO product) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql1 = "UPDATE beige_shop SET s_name = ?, s_size = ?, s_category = ?, s_price = ?, s_stock = ?";
+		String sql2 = " WHERE s_id = " + product.getS_id();
+		int isUpdate = -1;
+
+		try {
+			conn = getConnection();
+			
+			if (product.getS_image() != null) {
+				sql1 += ", s_image = '" + product.getS_image() + "'";
+			}
+			if (product.getS_image2() != null) {
+				sql1 += ", s_image2 = '" + product.getS_image2() + "'";
+			}
+
+			pstmt = conn.prepareStatement(sql1 + sql2);
+			pstmt.setString(1, product.getS_name());
+			pstmt.setString(2, product.getS_size());
+			pstmt.setString(3, product.getS_category());
+			pstmt.setInt(4, product.getS_price());
+			pstmt.setInt(5, product.getS_stock());
+			
+			isUpdate = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+		return isUpdate;
 	}
 
 }

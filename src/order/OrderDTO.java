@@ -10,19 +10,23 @@ public class OrderDTO {
 //    private String orderCancel; // 취소/교환/환불 상태
 //
 
-    private final Long orderNumber;
-    private final Long productNumber;
-    private final int quantity;
-    private final int price;
-    private final String orderDate;
-    private final String status;
-    private final String request;
-    private final Long tracking;
-    private final String productName;
-    private  String type;
+    private String orderNumber;	// o_id
+    private Long productNumber;	// s_id
+    private int quantity;			// o_quantity
+    private int price;			// o_paid
+    private String orderDate;		// o_date
+    private String status;		// o_status
+    private String request;		// o_comment
+    private Long tracking;		// o_ship
+    private String productName;	// s_name
+    private String type;				// o_type
+    private String o_ids;
+    private String o_qtys;
+    private String o_iamport;
+    private String o_card;
+    private String m_id;
 
-
-    public OrderDTO(Long orderNumber, Long productNumber, int quantity, int price, String orderDate, String status, String request, Long tracking, String type, String productName) {
+    public OrderDTO(String orderNumber, Long productNumber, int quantity, int price, String orderDate, String status, String request, Long tracking, String type, String productName) {
         this.orderNumber = orderNumber;
         this.productNumber = productNumber;
         this.quantity = quantity;
@@ -34,8 +38,11 @@ public class OrderDTO {
         this.type = type;
 		this.productName = productName;
     }
+    
+    public OrderDTO() {
+    }
 
-    public Long getOrderNumber() {
+    public String getOrderNumber() {
         return orderNumber;
     }
 
@@ -73,5 +80,85 @@ public class OrderDTO {
 
 	public String getProductName() {
 		return productName;
+	}
+
+	public String getO_ids() {
+		return o_ids;
+	}
+
+	public String getO_qtys() {
+		return o_qtys;
+	}
+
+	public void setO_ids(String o_ids) {
+		this.o_ids = o_ids;
+	}
+
+	public void setO_qtys(String o_qtys) {
+		this.o_qtys = o_qtys;
+	}
+
+	public String getO_iamport() {
+		return o_iamport;
+	}
+
+	public String getO_card() {
+		return o_card;
+	}
+
+	public void setO_iamport(String o_iamport) {
+		this.o_iamport = o_iamport;
+	}
+
+	public void setO_card(String o_card) {
+		this.o_card = o_card;
+	}
+
+	public String getM_id() {
+		return m_id;
+	}
+
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
+	}
+
+	public void setOrderNumber(String orderNumber) {
+		this.orderNumber = orderNumber;
+	}
+
+	public void setProductNumber(Long productNumber) {
+		this.productNumber = productNumber;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public void setOrderDate(String orderDate) {
+		this.orderDate = orderDate;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public void setRequest(String request) {
+		this.request = request;
+	}
+
+	public void setTracking(Long tracking) {
+		this.tracking = tracking;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }
